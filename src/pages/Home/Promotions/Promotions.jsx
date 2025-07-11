@@ -12,14 +12,14 @@ const promotions = [
     discount: "20%",
     title: "Fitness Fest Deal",
     description: "Enjoy 20% off on all fitness packages this month.",
-        color: "from-yellow-400 to-orange-500",
+    color: "from-yellow-400 to-orange-500",
   },
   {
     code: "SUMMER15",
     discount: "15%",
     title: "Summer Sports Offer",
     description: "Avail 15% discount on all summer sport activities.",
-     color: "from-yellow-200 to-yellow-400",
+    color: "from-yellow-200 to-yellow-400",
   },
 ];
 
