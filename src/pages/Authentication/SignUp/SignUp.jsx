@@ -25,7 +25,7 @@ const SignUp = () => {
           }
           <button className="btn bg-yellow-400 mt-4">Login</button>
         </form>
-        <p className='text-gray-600'>Already have an account?Please <Link className='text-yellow-400 underline text-xs' to='/signin'>SignIn</Link></p>
+        <p className='text-gray-600'>Already have an account?<Link className='text-yellow-400 hover:underline text-md font-semibold' to='/signin'>Click here to sign in</Link></p>
       </div>
     </div>
     );
