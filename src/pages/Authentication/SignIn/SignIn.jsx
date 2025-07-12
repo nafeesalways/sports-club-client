@@ -49,7 +49,7 @@ const SignIn = () => {
         </form>
         <p className="text-gray-600">
           Don't have any account? Please{" "}
-          <Link className="text-yellow-600 underline text-xs" to="/signup">
+          <Link className='text-yellow-400 hover:underline text-md font-semibold' to="/signup">
             SignUp
           </Link>
         </p>

@@ -1,5 +1,5 @@
 import React from "react";
-import { GiWhistle } from "react-icons/gi";
+
 import { Link, NavLink } from "react-router";
 
 const Navbar = () => {
@@ -59,7 +59,7 @@ const Navbar = () => {
             {Links}
           </ul>
         </div>
-        <GiWhistle size={40} className="mr-2 text-yellow-300"></GiWhistle>
+       <img className="w-10 h-10" src="https://cdn-icons-png.flaticon.com/128/1599/1599287.png" alt="" />
         <a className="cursor-pointer font-bold text-3xl italic">CHAMPION</a>
       </div>
       <div className="navbar-center hidden lg:flex">

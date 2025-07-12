@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { use } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
+import { AuthContext } from '../../../contexts/AuthContext';
+import { toast } from 'react-toastify';
 
 const SignUp = () => {
     const {register,handleSubmit,formState:{errors}} = useForm();
+    const {createUser} = use(AuthContext);
+    const navigate = useNavigate();
 
     const onSubmit=(data)=>{
-        console.log(data)
+        console.log(data);
+        console.log(createUser);
+        createUser(data.email,data.password,data.name)
+        .then(result=>{
+           const user = result.user;
+           navigate("/");
+            toast.success("User created successfully!",user);
+        })
     }
     return (
           <div className="card bg-base-100 mx-auto p-10 mt-20 max-w-sm shrink-0 shadow-2xl">
@@ -23,7 +34,7 @@ const SignUp = () => {
           {
             errors.password?.type ==='minLength' && <p className='text-red-500'>Password must be 6 characters or longer</p>
           }
-          <button className="btn bg-yellow-400 mt-4">Login</button>
+          <button className="btn bg-yellow-400 mt-4">Sign Up</button>
         </form>
         <p className='text-gray-600'>Already have an account?<Link className='text-yellow-400 hover:underline text-md font-semibold' to='/signin'>Click here to sign in</Link></p>
       </div>

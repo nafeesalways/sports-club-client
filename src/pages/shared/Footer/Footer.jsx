@@ -1,12 +1,12 @@
 import React from "react";
-import { GiWhistle } from "react-icons/gi";
+
 import { FaFacebook, FaTwitter, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
   return (
     <footer className="footer sm:footer-horizontal  text-black items-center p-4">
       <aside className="grid-flow-col items-center">
-        <GiWhistle to='/' size={40} className="mr-2 text-yellow-300 cursor-pointer"></GiWhistle>
+        <img className="w-10 h-10" src="https://cdn-icons-png.flaticon.com/128/1599/1599287.png" alt="" />
         <p className="font-semibold text-lg">
           Copyright © {new Date().getFullYear()} - All right reserved
         </p>
