@@ -1,11 +1,34 @@
 import React, { use } from "react";
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../../contexts/AuthContext";
+import { toast } from "react-toastify";
 
 const SignIn = () => {
-    const {googleSignIn} =use(AuthContext);
+    const {googleSignIn,signIn} =use(AuthContext);
+      const location = useLocation();
     const navigate = useNavigate();
+      const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data);
+         signIn(data.email, data.password)
+          .then((result) => {
+            const user = result.user;
+            console.log(user);
+            navigate(`${location.state ? location.state : "/"}`);
+            toast.success("User created successfully!");
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            toast.error(`Error (${errorCode}): ${errorMessage}`);
+          });
+  };
     const handleGoogleSignIn=()=>{
       googleSignIn()
       .then(result=>{
@@ -16,15 +39,9 @@ const SignIn = () => {
         console.log(error)
       })
     }
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+   
+    
 
-  const onSubmit = (data) => {
-    console.log(data);
-  };
 
   return (
     <div className="card bg-base-100 mx-auto p-10 mt-20 max-w-sm shrink-0 shadow-2xl mb-20">
