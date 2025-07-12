@@ -1,8 +1,16 @@
-import React from "react";
+import React, { use } from "react";
 
 import { Link, NavLink } from "react-router";
+import { AuthContext } from "../../../contexts/AuthContext";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
+   const { user, logOut } = use(AuthContext);
+     const handleLogOut = () => {
+       logOut()
+         .then(() => toast.success("Logged out successfully"))
+         .catch(() => toast.error("An error occurred"));
+     };
   const Links = (
     <>
       <NavLink
@@ -66,10 +74,20 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{Links}</ul>
       </div>
       <div className="navbar-end">
-        <Link to='/signin' className="btn mr-2 border-black bg-yellow-300 text-black">
-          Sign In
-        </Link>
-        <Link to='/signup' className="btn border-black bg-yellow-300 text-black">Sign Up</Link>
+         {/* login and logout part */}
+        {user ? (
+          <button
+            onClick={handleLogOut}
+            className="btn border-black bg-yellow-300 text-black"
+          >
+            Log Out
+          </button>
+        ) : (
+          <>
+             <Link to='/signin' className="btn border-black bg-yellow-300 text-black">Sign In</Link>
+              <Link to='/signup' className="btn border-black bg-yellow-300 text-black">Sign Up</Link>
+          </>
+        )}
       </div>
     </div>
   );

@@ -1,16 +1,31 @@
-import React from "react";
+import React, { use } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
+import { AuthContext } from "../../../contexts/AuthContext";
 
 const SignIn = () => {
+    const {googleSignIn} =use(AuthContext);
+    const navigate = useNavigate();
+    const handleGoogleSignIn=()=>{
+      googleSignIn()
+      .then(result=>{
+        navigate('/');
+        console.log(result.user)
+      })
+      .catch((error)=>{
+        console.log(error)
+      })
+    }
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+
   const onSubmit = (data) => {
     console.log(data);
   };
+
   return (
     <div className="card bg-base-100 mx-auto p-10 mt-20 max-w-sm shrink-0 shadow-2xl mb-20">
       <div className="card-body">
@@ -46,15 +61,18 @@ const SignIn = () => {
           <button type="submit" className="btn bg-yellow-400 mt-4">
             Login
           </button>
+          <p className="text-gray-600">
+            Don't have any account? Please{" "}
+            <Link
+              className="text-yellow-400 hover:underline text-md font-semibold"
+              to="/signup"
+            >
+              SignUp
+            </Link>
+          </p>
         </form>
-        <p className="text-gray-600">
-          Don't have any account? Please{" "}
-          <Link className='text-yellow-400 hover:underline text-md font-semibold' to="/signup">
-            SignUp
-          </Link>
-        </p>
         <div className="divider">OR</div>
-        <button className="btn bg-white text-black border-[#e5e5e5]">
+        <button onClick={handleGoogleSignIn} className="btn bg-white text-black border-[#e5e5e5]">
           <svg
             aria-label="Google logo"
             width="16"
