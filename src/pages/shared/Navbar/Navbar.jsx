@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 
 const Navbar = () => {
   const { user, logOut } = use(AuthContext);
+  console.log(user);
   const handleLogOut = () => {
     logOut()
       .then(() => toast.success("Logged out successfully"))
@@ -72,20 +73,58 @@ const Navbar = () => {
           src="https://cdn-icons-png.flaticon.com/128/1599/1599287.png"
           alt=""
         />
-        <a href="/" className="cursor-pointer font-bold text-3xl italic">CHAMPION</a>
+        <a href="/" className="cursor-pointer font-bold text-3xl italic">
+          CHAMPION
+        </a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{Links}</ul>
       </div>
       <div className="navbar-end">
-        {/* login and logout part */}
         {user ? (
-          <button
-            onClick={handleLogOut}
-            className="btn border-black bg-yellow-300 text-black"
-          >
-            Log Out
-          </button>
+          <div className="dropdown dropdown-end">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost btn-circle avatar"
+            >
+              <div className="w-10 rounded-full ring ring-yellow-400 ring-offset-base-100 ring-offset-2">
+                <img
+                  src={
+                    user?.photoURL ||
+                    "https://i.ibb.co/5vQ5cGV/default-user.png"
+                  }
+                  alt="Profile"
+                />
+              </div>
+            </div>
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-3 shadow bg-base-100 rounded-box w-56"
+            >
+              <li>
+                <span className="font-semibold text-gray-700 cursor-default">
+                  {user.displayName || user.email}
+                </span>
+              </li>
+              <li>
+                <Link
+                  to="/dashboard"
+                  className="hover:text-yellow-500 font-medium"
+                >
+                  Dashboard
+                </Link>
+              </li>
+              <li>
+                <button
+                  onClick={handleLogOut}
+                  className="text-left hover:text-red-500 font-medium"
+                >
+                  Logout
+                </button>
+              </li>
+            </ul>
+          </div>
         ) : (
           <>
             <Link

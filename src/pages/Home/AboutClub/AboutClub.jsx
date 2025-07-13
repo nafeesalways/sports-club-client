@@ -1,7 +1,7 @@
 // src/components/AboutClub.jsx
 const AboutClub = () => {
   return (
-    <section className="w-full px-6 md:px-16 lg:px-24 py-12 bg-gray-100 text-gray-800">
+    <section className="w-full px-6 md:px-16 lg:px-24 py-12 bg-gray-100 text-gray-800 mt-10">
       <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center text-yellow-400">
           About Our Club

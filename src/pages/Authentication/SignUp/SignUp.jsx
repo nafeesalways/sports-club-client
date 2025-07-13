@@ -25,8 +25,10 @@ const SignUp = () => {
     const imageUploadUrl = `https://api.imgbb.com/1/upload?key=${
       import.meta.env.VITE_image_upload_key
     }`;
+    console.log(imageUploadUrl)
     const res = await axios.post(imageUploadUrl, formData);
-    setProfilePic(res.data.data.url);
+    console.log(res)
+    setProfilePic(res.data.data.display_url);
   };
 
   const onSubmit = (data) => {
@@ -70,7 +72,7 @@ const SignUp = () => {
             type="file"
             onChange={handleImageUpload}
             className="input"
-            placeholder="Email"
+            placeholder="Image"
           />
           <label className="label">Email</label>
           <input
