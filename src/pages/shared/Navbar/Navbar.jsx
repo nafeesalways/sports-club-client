@@ -5,12 +5,12 @@ import { AuthContext } from "../../../contexts/AuthContext";
 import { toast } from "react-toastify";
 
 const Navbar = () => {
-   const { user, logOut } = use(AuthContext);
-     const handleLogOut = () => {
-       logOut()
-         .then(() => toast.success("Logged out successfully"))
-         .catch(() => toast.error("An error occurred"));
-     };
+  const { user, logOut } = use(AuthContext);
+  const handleLogOut = () => {
+    logOut()
+      .then(() => toast.success("Logged out successfully"))
+      .catch(() => toast.error("An error occurred"));
+  };
   const Links = (
     <>
       <NavLink
@@ -67,14 +67,18 @@ const Navbar = () => {
             {Links}
           </ul>
         </div>
-       <img className="w-10 h-10" src="https://cdn-icons-png.flaticon.com/128/1599/1599287.png" alt="" />
-        <a className="cursor-pointer font-bold text-3xl italic">CHAMPION</a>
+        <img
+          className="w-10 h-10"
+          src="https://cdn-icons-png.flaticon.com/128/1599/1599287.png"
+          alt=""
+        />
+        <a href="/" className="cursor-pointer font-bold text-3xl italic">CHAMPION</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{Links}</ul>
       </div>
       <div className="navbar-end">
-         {/* login and logout part */}
+        {/* login and logout part */}
         {user ? (
           <button
             onClick={handleLogOut}
@@ -84,8 +88,18 @@ const Navbar = () => {
           </button>
         ) : (
           <>
-             <Link to='/signin' className="btn mr-2 border-black bg-yellow-300 text-black">Sign In</Link>
-              <Link to='/signup' className="btn border-black bg-yellow-300 text-black">Sign Up</Link>
+            <Link
+              to="/signin"
+              className="btn mr-2 border-black bg-yellow-300 text-black"
+            >
+              Sign In
+            </Link>
+            <Link
+              to="/signup"
+              className="btn border-black bg-yellow-300 text-black"
+            >
+              Sign Up
+            </Link>
           </>
         )}
       </div>

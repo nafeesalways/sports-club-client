@@ -6,7 +6,8 @@ const Footer = () => {
   return (
     <footer className="footer sm:footer-horizontal bg-yellow-300  text-black items-center p-4">
       <aside className="grid-flow-col items-center">
-        <img className="w-10 h-10" src="https://cdn-icons-png.flaticon.com/128/1599/1599287.png" alt="" />
+        <a href="/"><img className="w-10 h-10" src="https://cdn-icons-png.flaticon.com/128/1599/1599287.png" alt="" /></a>
+        
         <p className="font-semibold text-lg">
           Copyright © {new Date().getFullYear()} - All right reserved
         </p>

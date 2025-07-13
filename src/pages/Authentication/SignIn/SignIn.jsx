@@ -5,10 +5,10 @@ import { AuthContext } from "../../../contexts/AuthContext";
 import { toast } from "react-toastify";
 
 const SignIn = () => {
-    const {googleSignIn,signIn} =use(AuthContext);
-      const location = useLocation();
-    const navigate = useNavigate();
-      const {
+  const { googleSignIn, signIn } = use(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const {
     register,
     handleSubmit,
     formState: { errors },
@@ -16,32 +16,29 @@ const SignIn = () => {
 
   const onSubmit = (data) => {
     console.log(data);
-         signIn(data.email, data.password)
-          .then((result) => {
-            const user = result.user;
-            console.log(user);
-            navigate(`${location.state ? location.state : "/"}`);
-            toast.success("User created successfully!");
-          })
-          .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            toast.error(`Error (${errorCode}): ${errorMessage}`);
-          });
+    signIn(data.email, data.password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        navigate(`${location.state ? location.state : "/"}`);
+        toast.success("User created successfully!");
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        toast.error(`Error (${errorCode}): ${errorMessage}`);
+      });
   };
-    const handleGoogleSignIn=()=>{
-      googleSignIn()
-      .then(result=>{
-        navigate('/');
-        console.log(result.user)
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then((result) => {
+        navigate("/");
+        console.log(result.user);
       })
-      .catch((error)=>{
-        console.log(error)
-      })
-    }
-   
-    
-
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
     <div className="card bg-base-100 mx-auto p-10 mt-20 max-w-sm shrink-0 shadow-2xl mb-20">
@@ -89,7 +86,10 @@ const SignIn = () => {
           </p>
         </form>
         <div className="divider">OR</div>
-        <button onClick={handleGoogleSignIn} className="btn bg-white text-black border-[#e5e5e5]">
+        <button
+          onClick={handleGoogleSignIn}
+          className="btn bg-white text-black border-[#e5e5e5]"
+        >
           <svg
             aria-label="Google logo"
             width="16"
