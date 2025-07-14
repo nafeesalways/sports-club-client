@@ -26,6 +26,7 @@ const Navbar = () => {
       >
         <a>Home</a>
       </NavLink>
+      
       <NavLink
         to="/courts"
         className={({ isActive }) =>
@@ -107,7 +108,9 @@ const Navbar = () => {
                   {user.displayName || user.email}
                 </span>
               </li>
-              <li>
+            {
+              user && <>
+                <li>
                 <Link
                   to="/dashboard"
                   className="hover:text-yellow-500 font-medium"
@@ -115,6 +118,8 @@ const Navbar = () => {
                   Dashboard
                 </Link>
               </li>
+              </>
+            }
               <li>
                 <button
                   onClick={handleLogOut}
