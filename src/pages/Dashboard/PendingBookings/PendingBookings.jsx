@@ -3,6 +3,7 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { use } from 'react';
 import { AuthContext } from '../../../contexts/AuthContext';
 import UseAxiosSecure from '../../../hook/UseAxiosSecure';
+import Loader from '../../../Loader/Loader';
 
 const PendingBookings = () => {
     const axiosSecure = UseAxiosSecure();
@@ -42,7 +43,7 @@ const PendingBookings = () => {
       <h2 className="text-2xl font-bold mb-4">Pending Bookings</h2>
 
       {isLoading ? (
-        <p>Loading bookings...</p>
+       <Loader></Loader>
       ) : bookings.length === 0 ? (
         <p>No pending bookings.</p>
       ) : (

@@ -52,6 +52,9 @@ const DashboardLayout = () => {
           <li>
             <NavLink className='text-lg text-yellow-400 font-extrabold' to='/dashboard/pendingBookings'>Pending Bookings</NavLink>
           </li>
+          <li>
+            <NavLink className='text-lg text-yellow-400 font-extrabold' to='/dashboard/announcements'>Announcements</NavLink>
+          </li>
         </ul>
       </div>
     </div>

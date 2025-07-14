@@ -10,6 +10,7 @@ import DashboardLayout from "../layouts/DashboardLayout";
 import PrivateRoute from "../routes/PrivateRoute";
 import MyProfile from "../pages/Dashboard/MyProfile/MyProfile";
 import PendingBookings from "../pages/Dashboard/PendingBookings/PendingBookings";
+import Announcements from "../pages/Dashboard/Announcements/Announcements";
 
 export const router = createBrowserRouter([
   {
@@ -60,6 +61,10 @@ export const router = createBrowserRouter([
       {
         path:'pendingBookings',
         Component:PendingBookings,
+      },
+      {
+        path:'announcements',
+        Component:Announcements,
       }
     ]
   }
