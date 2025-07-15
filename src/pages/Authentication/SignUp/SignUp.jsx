@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../../contexts/AuthContext";
 import { toast } from "react-toastify";
 import axios from "axios";
+import UseAxios from "../../../hook/UseAxios";
 
 const SignUp = () => {
   const {
@@ -16,6 +17,7 @@ const SignUp = () => {
   const location = useLocation();
   const from = location.state?.from || "/";
   const [profilePic, setProfilePic] = useState("");
+  const axiosInstance = UseAxios();
 
   const handleImageUpload = async (e) => {
     const image = e.target.files[0];
@@ -34,8 +36,18 @@ const SignUp = () => {
   const onSubmit = (data) => {
     console.log(data);
     console.log(createUser);
-    createUser(data.email, data.password, data.name).then((result) => {
+    createUser(data.email, data.password, data.name).then(async(result) => {
       const user = result.user;
+
+      const userInfo={
+        email:data.email,
+        role: 'user',//default role
+        created_at: new Date().toISOString(),
+        last_log_in:  new Date().toISOString(),
+      }
+
+      const userRes = await axiosInstance.post('/users',userInfo);
+      console.log(userRes.data);
       const userProfile = {
         displayName: data.name,
         photoURL: profilePic,

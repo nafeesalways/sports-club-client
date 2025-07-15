@@ -1,12 +1,18 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router";
+import {
+  FaHome,
+  FaUserCircle,
+  FaClipboardList,
+  FaBullhorn,
+} from "react-icons/fa";
 
 const DashboardLayout = () => {
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col">
-        <div className="navbar bg-base-300 w-full lg:hidden">
+        <div className="navbar bg-base-300  w-full lg:hidden">
           <div className="flex-none">
             <label
               htmlFor="my-drawer-2"
@@ -29,10 +35,9 @@ const DashboardLayout = () => {
             </label>
           </div>
           <div className="mx-2 flex-1 px-2 lg:hidden">Dashboard</div>
-          
         </div>
         {/* Page content here */}
-       <Outlet></Outlet>
+        <Outlet></Outlet>
         {/* Page content here */}
       </div>
       <div className="drawer-side">
@@ -41,19 +46,37 @@ const DashboardLayout = () => {
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
+        <ul className="menu bg-yellow-100 border border-amber-600 text-base-content min-h-full w-80 p-4">
           {/* Sidebar content here */}
           <li>
-            <NavLink className='text-lg text-yellow-400 font-extrabold' to='/'>Home</NavLink>
+            <NavLink className="text-lg text-yellow-500 font-extrabold" to="/">
+              <FaHome></FaHome> Home
+            </NavLink>
           </li>
           <li>
-            <NavLink className='text-lg text-yellow-400 font-extrabold' to='/dashboard/myProfile'>My Profile</NavLink>
+            <NavLink
+              className="text-lg text-yellow-500 font-extrabold"
+              to="/dashboard/myProfile"
+            >
+              <FaUserCircle></FaUserCircle> My Profile
+            </NavLink>
           </li>
           <li>
-            <NavLink className='text-lg text-yellow-400 font-extrabold' to='/dashboard/pendingBookings'>Pending Bookings</NavLink>
+            <NavLink
+              className="text-lg text-yellow-500 font-extrabold"
+              to="/dashboard/pendingBookings"
+            >
+              <FaClipboardList></FaClipboardList> Pending Bookings
+            </NavLink>
           </li>
           <li>
-            <NavLink className='text-lg text-yellow-400 font-extrabold' to='/dashboard/announcements'>Announcements</NavLink>
+            <NavLink
+              className="text-lg text-yellow-500 font-extrabold"
+              to="/dashboard/announcements"
+            >
+              {" "}
+              <FaBullhorn></FaBullhorn>Announcements
+            </NavLink>
           </li>
         </ul>
       </div>
