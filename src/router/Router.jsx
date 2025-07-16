@@ -18,6 +18,8 @@ import ManageBookingApproval from "../pages/Dashboard/ManageBookingApproval/Mana
 import ManageMembers from "../pages/Dashboard/ManageMembers/ManageMembers";
 import AllUsers from "../pages/Dashboard/AllUsers/AllUsers";
 import ManageCourts from "../pages/Dashboard/ManageCourts/ManageCourts";
+import ManageBookings from "../pages/Dashboard/ManageBookings/ManageBookings";
+import ManageCoupons from "../pages/Dashboard/ManageCoupons/ManageCoupons";
 
 export const router = createBrowserRouter([
   {
@@ -97,6 +99,14 @@ export const router = createBrowserRouter([
       {
         path:'manageCourts',
         element:<AdminRoute><ManageCourts></ManageCourts></AdminRoute>,
+      },
+      {
+        path:'manageBookings',
+        element:<AdminRoute><ManageBookings></ManageBookings></AdminRoute>,
+      },
+      {
+        path:'manageCoupons',
+        element:<AdminRoute><ManageCoupons></ManageCoupons></AdminRoute>,
       }
     ]
   }

@@ -10,6 +10,7 @@ import {
   FaUsersCog,
   FaUsers,
   FaWarehouse,
+  FaTags,
 } from "react-icons/fa";
 
 const DashboardLayout = () => {
@@ -110,8 +111,18 @@ const DashboardLayout = () => {
           </NavLink>
           </li>
           <li>
-          <NavLink   className="text-lg text-yellow-500 font-extrabold" to='/dashboard/manageCourts'>
+          <NavLink  className="text-lg text-yellow-500 font-extrabold" to='/dashboard/manageCourts'>
            <FaWarehouse></FaWarehouse> Manage Courts
+          </NavLink>
+          </li>
+          <li>
+          <NavLink  className="text-lg text-yellow-500 font-extrabold" to='/dashboard/manageBookings'>
+          <FaCalendarCheck></FaCalendarCheck> Manage Bookings
+          </NavLink>
+          </li>
+          <li>
+          <NavLink  className="text-lg text-yellow-500 font-extrabold" to='/dashboard/manageCoupons'>
+          <FaTags></FaTags> Manage Coupons
           </NavLink>
           </li>
         </ul>
