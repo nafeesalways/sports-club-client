@@ -5,6 +5,7 @@ import {
   FaUserCircle,
   FaClipboardList,
   FaBullhorn,
+  FaUserShield,
 } from "react-icons/fa";
 
 const DashboardLayout = () => {
@@ -77,6 +78,12 @@ const DashboardLayout = () => {
               {" "}
               <FaBullhorn></FaBullhorn>Announcements
             </NavLink>
+          </li>
+          {/* admin routes */}
+          <li>
+          <NavLink   className="text-lg text-yellow-500 font-extrabold" to='/dashboard/makeAdmin'>
+            <FaUserShield></FaUserShield> Make Admin
+          </NavLink>
           </li>
         </ul>
       </div>

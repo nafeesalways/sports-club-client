@@ -11,6 +11,7 @@ import PrivateRoute from "../routes/PrivateRoute";
 import MyProfile from "../pages/Dashboard/MyProfile/MyProfile";
 import PendingBookings from "../pages/Dashboard/PendingBookings/PendingBookings";
 import Announcements from "../pages/Dashboard/Announcements/Announcements";
+import MakeAdmin from "../pages/Dashboard/MakeAdmin/MakeAdmin";
 
 export const router = createBrowserRouter([
   {
@@ -65,6 +66,10 @@ export const router = createBrowserRouter([
       {
         path:'announcements',
         Component:Announcements,
+      },
+      {
+        path:'makeAdmin',
+        Component:MakeAdmin,
       }
     ]
   }
