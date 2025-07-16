@@ -73,7 +73,7 @@ const SignIn = () => {
             <a className="link link-hover">Forgot password?</a>
           </div>
           <button type="submit" className="btn bg-yellow-400 mt-4">
-            Login
+           Sign In
           </button>
           <p className="text-gray-600">
             Don't have any account? Please{" "}
