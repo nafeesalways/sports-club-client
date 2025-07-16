@@ -85,6 +85,16 @@ const DashboardLayout = () => {
             <FaUserShield></FaUserShield> Make Admin
           </NavLink>
           </li>
+          <li>
+          <NavLink   className="text-lg text-yellow-500 font-extrabold" to='/dashboard/adminProfile'>
+           Admin Profile
+          </NavLink>
+          </li>
+          <li>
+          <NavLink   className="text-lg text-yellow-500 font-extrabold" to='/dashboard/manageBookingApproval'>
+          Manage Booking Approval
+          </NavLink>
+          </li>
         </ul>
       </div>
     </div>

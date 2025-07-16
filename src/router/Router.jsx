@@ -12,6 +12,9 @@ import MyProfile from "../pages/Dashboard/MyProfile/MyProfile";
 import PendingBookings from "../pages/Dashboard/PendingBookings/PendingBookings";
 import Announcements from "../pages/Dashboard/Announcements/Announcements";
 import MakeAdmin from "../pages/Dashboard/MakeAdmin/MakeAdmin";
+import AdminProfile from "../pages/Dashboard/AdminProfile/AdminProfile";
+import AdminRoute from "../routes/AdminRoute";
+import ManageBookingApproval from "../pages/Dashboard/ManageBookingApproval/ManageBookingApproval";
 
 export const router = createBrowserRouter([
   {
@@ -67,9 +70,18 @@ export const router = createBrowserRouter([
         path:'announcements',
         Component:Announcements,
       },
+      //admin routes
       {
         path:'makeAdmin',
-        Component:MakeAdmin,
+        element:<MakeAdmin></MakeAdmin>,
+      },
+      {
+        path:'adminProfile',
+        element:<AdminProfile></AdminProfile>, 
+      },
+      {
+        path:'manageBookingApproval',
+        element:<AdminRoute><ManageBookingApproval></ManageBookingApproval></AdminRoute>,
       }
     ]
   }
