@@ -15,6 +15,8 @@ import MakeAdmin from "../pages/Dashboard/MakeAdmin/MakeAdmin";
 import AdminProfile from "../pages/Dashboard/AdminProfile/AdminProfile";
 import AdminRoute from "../routes/AdminRoute";
 import ManageBookingApproval from "../pages/Dashboard/ManageBookingApproval/ManageBookingApproval";
+import ManageMembers from "../pages/Dashboard/ManageMembers/ManageMembers";
+import AllUsers from "../pages/Dashboard/AllUsers/AllUsers";
 
 export const router = createBrowserRouter([
   {
@@ -73,15 +75,23 @@ export const router = createBrowserRouter([
       //admin routes
       {
         path:'makeAdmin',
-        element:<MakeAdmin></MakeAdmin>,
+        element:<AdminRoute><MakeAdmin></MakeAdmin></AdminRoute>,
       },
       {
         path:'adminProfile',
-        element:<AdminProfile></AdminProfile>, 
+        element:<AdminRoute><AdminProfile></AdminProfile></AdminRoute>, 
       },
       {
         path:'manageBookingApproval',
         element:<AdminRoute><ManageBookingApproval></ManageBookingApproval></AdminRoute>,
+      },
+      {
+        path:'manageMembers',
+        element:<AdminRoute><ManageMembers></ManageMembers></AdminRoute>,
+      },
+      {
+        path:'allUsers',
+        element:<AdminRoute><AllUsers></AllUsers></AdminRoute>
       }
     ]
   }

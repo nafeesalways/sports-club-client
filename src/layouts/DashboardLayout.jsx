@@ -6,6 +6,9 @@ import {
   FaClipboardList,
   FaBullhorn,
   FaUserShield,
+  FaCalendarCheck,
+  FaUsersCog,
+  FaUsers,
 } from "react-icons/fa";
 
 const DashboardLayout = () => {
@@ -87,12 +90,22 @@ const DashboardLayout = () => {
           </li>
           <li>
           <NavLink   className="text-lg text-yellow-500 font-extrabold" to='/dashboard/adminProfile'>
-           Admin Profile
+         <FaUserCircle></FaUserCircle>  Admin Profile
           </NavLink>
           </li>
           <li>
           <NavLink   className="text-lg text-yellow-500 font-extrabold" to='/dashboard/manageBookingApproval'>
-          Manage Booking Approval
+         <FaCalendarCheck></FaCalendarCheck> Manage Booking Approval
+          </NavLink>
+          </li>
+          <li>
+          <NavLink   className="text-lg text-yellow-500 font-extrabold" to='/dashboard/manageMembers'>
+           <FaUsersCog></FaUsersCog> Manage Members
+          </NavLink>
+          </li>
+          <li>
+          <NavLink   className="text-lg text-yellow-500 font-extrabold" to='/dashboard/allUsers'>
+           <FaUsers></FaUsers> All Users
           </NavLink>
           </li>
         </ul>
