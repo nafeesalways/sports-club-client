@@ -20,6 +20,7 @@ import AllUsers from "../pages/Dashboard/AllUsers/AllUsers";
 import ManageCourts from "../pages/Dashboard/ManageCourts/ManageCourts";
 import ManageBookings from "../pages/Dashboard/ManageBookings/ManageBookings";
 import ManageCoupons from "../pages/Dashboard/ManageCoupons/ManageCoupons";
+import MakeAnnouncement from "../pages/Dashboard/MakeAnnouncement/MakeAnnouncement";
 
 export const router = createBrowserRouter([
   {
@@ -107,6 +108,10 @@ export const router = createBrowserRouter([
       {
         path:'manageCoupons',
         element:<AdminRoute><ManageCoupons></ManageCoupons></AdminRoute>,
+      },
+      {
+        path:'makeAnnouncement',
+        element:<AdminRoute><MakeAnnouncement></MakeAnnouncement></AdminRoute>,
       }
     ]
   }
