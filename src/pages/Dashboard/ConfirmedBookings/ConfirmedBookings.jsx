@@ -1,10 +1,11 @@
 import { use } from 'react';
 import { useQuery } from '@tanstack/react-query';
 
-import UseAxiosSecure from '../../../hook/UseAxiosSecure';
+
 
 import { AuthContext } from '../../../contexts/AuthContext';
 import Loader from '../../../Loader/Loader';
+import UseAxiosSecure from '../../../Hook/UseAxiosSecure';
 
 const ConfirmedBookings = () => {
   const { user } = use(AuthContext);

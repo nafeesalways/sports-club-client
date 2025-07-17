@@ -2,7 +2,8 @@ import { useLocation, useNavigate } from 'react-router';
 import { use, useState } from 'react';
 
 import { AuthContext } from '../../../contexts/AuthContext';
-import UseAxiosSecure from '../../../hook/UseAxiosSecure';
+import UseAxiosSecure from '../../../Hook/UseAxiosSecure';
+
 
 const PaymentPage = () => {
   const { state } = useLocation();

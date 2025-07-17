@@ -1,8 +1,9 @@
 import { useQuery } from '@tanstack/react-query';
 
 
-import UseAxiosSecure from '../../../hook/UseAxiosSecure';
+
 import Loader from '../../../Loader/Loader';
+import UseAxiosSecure from '../../../Hook/UseAxiosSecure';
 
 const MemberAnnouncements = () => {
   const axiosSecure = UseAxiosSecure();

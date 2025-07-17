@@ -4,8 +4,9 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { AuthContext } from '../../../contexts/AuthContext';
 
 
-import UseAxiosSecure from '../../../hook/UseAxiosSecure';
+
 import Loader from '../../../Loader/Loader';
+import UseAxiosSecure from '../../../Hook/UseAxiosSecure';
 
 const ApprovedBookings = () => {
   const { user } = use(AuthContext);
@@ -35,7 +36,7 @@ const ApprovedBookings = () => {
   });
 
   const handlePayment = (booking) => {
-    navigate('/dashboard/payment', { state: { booking } });
+    navigate('/dashboard/paymentPage', { state: { booking } });
   };
 
   if (isLoading) return <Loader />;
