@@ -15,7 +15,7 @@ const MemberRoute = ({ children }) => {
  
    if (!user || role !== "member") {
      return (
-       <Navigate state={{ from: location.pathname }} to="/"></Navigate>
+       <Navigate state={{ from: location.pathname }} to="/forbidden"></Navigate>
      );
    }
    return children;

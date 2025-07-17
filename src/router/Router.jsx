@@ -28,6 +28,7 @@ import ApprovedBookings from "../pages/Dashboard/ApprovedBookings/ApprovedBookin
 import PaymentPage from "../pages/Dashboard/PaymentPage/PaymentPage";
 import PaymentHistory from "../pages/Dashboard/PaymentHistory/PaymentHistory";
 import MemberAnnouncements from "../pages/Dashboard/MemberAnnouncements/MemberAnnouncements";
+import Forbidden from "../pages/Dashboard/Forbidden/Forbidden";
 
 export const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ export const router = createBrowserRouter([
         {
           path:'/courts',
           Component:Courts,
+        },
+        {
+          path:'/forbidden',
+          Component:Forbidden,
         },
         {
           path:'/*',

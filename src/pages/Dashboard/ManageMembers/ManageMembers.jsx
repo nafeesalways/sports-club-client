@@ -1,8 +1,11 @@
-import { useState } from 'react';
+import {  useState } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import UseAxiosSecure from '../../../hook/UseAxiosSecure';
+import UseAxiosSecure from '../../../Hook/UseAxiosSecure';
+
+
 
 const ManageMembers = () => {
+
     const axiosSecure = UseAxiosSecure();
   const [search, setSearch] = useState('');
   const queryClient = useQueryClient();
@@ -40,7 +43,7 @@ const ManageMembers = () => {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Search by name..."
-          className="border p-2 rounded w-full input-lg sm:w-1/2"
+          className="border p-2 rounded w-full input-lg "
         />
       </div>
 
