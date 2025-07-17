@@ -21,6 +21,10 @@ import ManageCourts from "../pages/Dashboard/ManageCourts/ManageCourts";
 import ManageBookings from "../pages/Dashboard/ManageBookings/ManageBookings";
 import ManageCoupons from "../pages/Dashboard/ManageCoupons/ManageCoupons";
 import MakeAnnouncement from "../pages/Dashboard/MakeAnnouncement/MakeAnnouncement";
+import MemberRoute from "../routes/MemberRoute";
+import MemberProfile from "../pages/Dashboard/MemberProfile/MemberProfile";
+import MemberPendingBookings from "../pages/Dashboard/MemberPendingBookings/MemberPendingBookings";
+import ApprovedBookings from "../pages/Dashboard/ApprovedBookings/ApprovedBookings";
 
 export const router = createBrowserRouter([
   {
@@ -112,6 +116,19 @@ export const router = createBrowserRouter([
       {
         path:'makeAnnouncement',
         element:<AdminRoute><MakeAnnouncement></MakeAnnouncement></AdminRoute>,
+      },
+      //member routes
+      {
+        path:'memberProfile',
+        element:<MemberRoute><MemberProfile></MemberProfile></MemberRoute>,
+      },
+      {
+        path:'memberPendingBookings',
+        element:<MemberRoute><MemberPendingBookings></MemberPendingBookings></MemberRoute>,
+      },
+      {
+        path:'approvedBookings',
+        element:<MemberRoute><ApprovedBookings></ApprovedBookings></MemberRoute>,
       }
     ]
   }

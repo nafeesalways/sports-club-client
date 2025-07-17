@@ -12,6 +12,7 @@ import {
   FaWarehouse,
   FaTags,
 } from "react-icons/fa";
+import { MdAssignmentTurnedIn } from "react-icons/md";
 
 const DashboardLayout = () => {
   return (
@@ -128,6 +129,23 @@ const DashboardLayout = () => {
           <li>
           <NavLink  className="text-lg text-yellow-500 font-extrabold" to='/dashboard/makeAnnouncement'>
           <FaBullhorn></FaBullhorn> Make Announcements
+          </NavLink>
+          </li>
+        
+
+             <li>
+          <NavLink  className="text-lg text-yellow-500 font-extrabold" to='/dashboard/memberProfile'>
+          <FaUserCircle></FaUserCircle> Member Profile
+          </NavLink>
+          </li>
+             <li>
+          <NavLink  className="text-lg text-yellow-500 font-extrabold" to='/dashboard/memberPendingBookings'>
+          <FaCalendarCheck></FaCalendarCheck> Member Pending Bookings
+          </NavLink>
+          </li>
+             <li>
+          <NavLink  className="text-lg text-yellow-500 font-extrabold" to='/dashboard/approvedBookings'>
+         <MdAssignmentTurnedIn></MdAssignmentTurnedIn> Member Approved Bookings
           </NavLink>
           </li>
         </ul>

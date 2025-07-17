@@ -1,8 +1,5 @@
 import React, { use } from "react";
 
-
-
-
 import { AuthContext } from "../contexts/AuthContext";
 import UseUserRole from "../Hook/UseUserRole";
 import Loader from "../Loader/Loader";
