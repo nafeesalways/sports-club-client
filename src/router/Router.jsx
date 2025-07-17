@@ -25,6 +25,9 @@ import MemberRoute from "../routes/MemberRoute";
 import MemberProfile from "../pages/Dashboard/MemberProfile/MemberProfile";
 import MemberPendingBookings from "../pages/Dashboard/MemberPendingBookings/MemberPendingBookings";
 import ApprovedBookings from "../pages/Dashboard/ApprovedBookings/ApprovedBookings";
+import PaymentPage from "../pages/Dashboard/PaymentPage/PaymentPage";
+import PaymentHistory from "../pages/Dashboard/PaymentHistory/PaymentHistory";
+import MemberAnnouncements from "../pages/Dashboard/MemberAnnouncements/MemberAnnouncements";
 
 export const router = createBrowserRouter([
   {
@@ -129,6 +132,18 @@ export const router = createBrowserRouter([
       {
         path:'approvedBookings',
         element:<MemberRoute><ApprovedBookings></ApprovedBookings></MemberRoute>,
+      },
+      {
+        path:'paymentPage',
+        element:<MemberRoute><PaymentPage></PaymentPage></MemberRoute>,
+      },
+      {
+        path:'paymentHistory',
+        element:<MemberRoute><PaymentHistory></PaymentHistory></MemberRoute>,
+      },
+      {
+        path:'memberAnnouncements',
+        element:<MemberRoute><MemberAnnouncements></MemberAnnouncements></MemberRoute>,
       }
     ]
   }

@@ -11,8 +11,9 @@ import {
   FaUsers,
   FaWarehouse,
   FaTags,
+  FaHistory,
 } from "react-icons/fa";
-import { MdAssignmentTurnedIn } from "react-icons/md";
+import { MdAnnouncement, MdAssignmentTurnedIn, MdPayment, MdVerified } from "react-icons/md";
 
 const DashboardLayout = () => {
   return (
@@ -146,6 +147,26 @@ const DashboardLayout = () => {
              <li>
           <NavLink  className="text-lg text-yellow-500 font-extrabold" to='/dashboard/approvedBookings'>
          <MdAssignmentTurnedIn></MdAssignmentTurnedIn> Member Approved Bookings
+          </NavLink>
+          </li>
+             <li>
+          <NavLink  className="text-lg text-yellow-500 font-extrabold" to='/dashboard/confirmedBookings'>
+         <MdVerified></MdVerified> Confirmed Bookings
+          </NavLink>
+          </li>
+             <li>
+          <NavLink  className="text-lg text-yellow-500 font-extrabold" to='/dashboard/paymentPage'>
+         <MdPayment></MdPayment> Payment Page
+          </NavLink>
+          </li>
+             <li>
+          <NavLink  className="text-lg text-yellow-500 font-extrabold" to='/dashboard/paymentHistory'>
+         <FaHistory></FaHistory> Payment History
+          </NavLink>
+          </li>
+             <li>
+          <NavLink  className="text-lg text-yellow-500 font-extrabold" to='/dashboard/memberAnnouncements'>
+         <MdAnnouncement></MdAnnouncement> Member Announcements
           </NavLink>
           </li>
         </ul>
