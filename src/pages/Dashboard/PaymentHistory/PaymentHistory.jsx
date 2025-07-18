@@ -1,22 +1,22 @@
-import { use } from 'react';
-import { useQuery } from '@tanstack/react-query';
+import { use } from "react";
+import { useQuery } from "@tanstack/react-query";
 
-import UseAxiosSecure from '../../../hook/UseAxiosSecure';
+import UseAxiosSecure from "../../../hook/UseAxiosSecure";
 
-import { AuthContext } from '../../../contexts/AuthContext';
-import Loader from '../../../Loader/Loader';
+import { AuthContext } from "../../../contexts/AuthContext";
+import Loader from "../../../Loader/Loader";
 
 const PaymentHistory = () => {
   const { user } = use(AuthContext);
   const axiosSecure = UseAxiosSecure();
 
   const { data: payments = [], isLoading } = useQuery({
-    queryKey: ['payment-history', user?.email],
+    queryKey: ["payment-history", user?.email],
     enabled: !!user?.email,
     queryFn: async () => {
       const res = await axiosSecure.get(`/member/payments?email=${user.email}`);
       return res.data;
-    }
+    },
   });
 
   if (isLoading) return <Loader />;
@@ -33,7 +33,6 @@ const PaymentHistory = () => {
             <thead className="bg-gray-100">
               <tr>
                 <th className="p-2 border">Court</th>
-                <th className="p-2 border">Slot</th>
                 <th className="p-2 border">Date</th>
                 <th className="p-2 border">Original Price</th>
                 <th className="p-2 border">Paid Price</th>
@@ -43,7 +42,6 @@ const PaymentHistory = () => {
               {payments.map((p) => (
                 <tr key={p._id} className="border-t">
                   <td className="p-2 border">{p.courtName}</td>
-                  <td className="p-2 border">{p.slot}</td>
                   <td className="p-2 border">{p.date}</td>
                   <td className="p-2 border">${p.originalPrice}</td>
                   <td className="p-2 border">${p.finalPrice}</td>

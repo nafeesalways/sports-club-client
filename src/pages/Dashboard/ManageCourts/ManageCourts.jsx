@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { use, useState } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 
 import UseAxiosSecure from "../../../hook/UseAxiosSecure";
+import { AuthContext } from "../../../contexts/AuthContext";
 
 const ManageCourts = () => {
+  const {user} = use(AuthContext);
   const [form, setForm] = useState({
     name: "",
     location: "",
@@ -11,6 +13,7 @@ const ManageCourts = () => {
     image: "",
     slot: "",
     price: "",
+    email: user.email
   });
 
   const [editingId, setEditingId] = useState(null);

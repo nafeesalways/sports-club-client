@@ -13,7 +13,7 @@ const PendingBookings = () => {
   // Fetch bookings
   const { data: bookings = [], isLoading } = useQuery({
     queryKey: ['pendingBookings', user?.email],
-    queryFn: () => async()=>{
+    queryFn: async()=>{
         const res = await axiosSecure.get(`/bookings?email=${user.email}&status=pending`);
         return res.data;
     },
@@ -50,7 +50,7 @@ const PendingBookings = () => {
         <div className="grid gap-4">
           {bookings?.map(booking => (
             <div key={booking._id} className="border rounded p-4 shadow">
-              <p><strong>Slot:</strong> {booking.slot}</p>
+              <p><strong>Slot:</strong> {booking.slots}</p>
               <p><strong>Date:</strong> {booking.date}</p>
               <p><strong>Price:</strong> ${booking.price}</p>
               <button

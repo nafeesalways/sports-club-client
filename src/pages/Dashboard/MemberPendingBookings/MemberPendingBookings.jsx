@@ -56,7 +56,7 @@ const MemberPendingBookings = () => {
               {bookings.map((booking) => (
                 <tr key={booking._id} className="border-t">
                   <td className="p-2 border">{booking.courtName}</td>
-                  <td className="p-2 border">{booking.slot}</td>
+                  <td className="p-2 border">{booking.slots}</td>
                   <td className="p-2 border">{booking.date}</td>
                   <td className="p-2 border">${booking.price}</td>
                   <td className="p-2 border">

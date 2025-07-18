@@ -28,7 +28,7 @@ const ManageBookings = () => {
       <form onSubmit={handleSearch} className="mb-4 flex gap-2">
         <input
           type="text"
-          placeholder="Search by court title..."
+          placeholder="Search by court name..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
           className="border p-2 rounded w-full sm:w-2/3"
@@ -51,8 +51,8 @@ const ManageBookings = () => {
             >
               <div>
                 <p><strong>User:</strong> {booking.email}</p>
-                <p><strong>Court:</strong> {booking.courtTitle || 'N/A'}</p>
-                <p><strong>Slot:</strong> {booking.slot}</p>
+                <p><strong>Court:</strong> {booking.courtName || 'N/A'}</p>
+                <p><strong>Slot:</strong> {booking.slots}</p>
                 <p><strong>Date:</strong> {booking.date}</p>
                 <p><strong>Price:</strong> ${booking.price}</p>
               </div>

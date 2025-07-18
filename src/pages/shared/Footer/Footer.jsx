@@ -67,7 +67,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-black mt-10 pt-4 text-center text-sm">
+      <div className="border-t italic border-black mt-10 pt-4 text-center font-semibold text-sm">
         <p>Designed with ❤️ by Champion Sports Club Team</p>
       </div>
     </footer>

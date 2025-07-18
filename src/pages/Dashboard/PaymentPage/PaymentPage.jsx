@@ -1,20 +1,34 @@
+import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import { useLocation, useNavigate } from 'react-router';
-import { use, useState } from 'react';
+import { useEffect, useState, use } from 'react';
 
+
+import Swal from 'sweetalert2';
+import UseAxiosSecure from '../../../hook/UseAxiosSecure';
 import { AuthContext } from '../../../contexts/AuthContext';
-import UseAxiosSecure from '../../../Hook/UseAxiosSecure';
-
 
 const PaymentPage = () => {
+  const stripe = useStripe();
+  const elements = useElements();
   const { state } = useLocation();
   const navigate = useNavigate();
-  const { user } =use(AuthContext);
+  const { user } = use(AuthContext);
   const axiosSecure = UseAxiosSecure();
 
   const booking = state?.booking;
   const [coupon, setCoupon] = useState('');
   const [discountedPrice, setDiscountedPrice] = useState(booking?.price || 0);
   const [message, setMessage] = useState('');
+  const [error, setError] = useState('');
+  const [clientSecret, setClientSecret] = useState('');
+
+  useEffect(() => {
+    if (booking?.price) {
+      axiosSecure.post('/create-payment-intent', {
+        amount: booking.price * 100, // Convert to cents
+      }).then(res => setClientSecret(res.data.clientSecret));
+    }
+  }, [booking, axiosSecure]);
 
   const handleApplyCoupon = async () => {
     try {
@@ -31,24 +45,65 @@ const PaymentPage = () => {
     }
   };
 
-  const handlePaymentSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!stripe || !elements) return;
 
-    try {
-      await axiosSecure.post('/payments', {
-        bookingId: booking._id,
-        email: user.email,
-        courtName: booking.courtName,
-        slot: booking.slot,
-        date: booking.date,
-        originalPrice: booking.price,
-        finalPrice: discountedPrice,
-      });
+    const card = elements.getElement(CardElement);
+    if (!card) return;
 
-      setMessage('Payment successful!');
-      navigate('/dashboard/confirmedBookings');
-    } catch {
-      setMessage('Payment failed');
+    const { error: cardError} = await stripe.createPaymentMethod({
+      type: 'card',
+      card,
+    });
+
+    if (cardError) {
+      setError(cardError.message);
+      return;
+    } else {
+      setError('');
+    }
+
+    const result = await stripe.confirmCardPayment(clientSecret, {
+      payment_method: {
+        card,
+        billing_details: {
+          name: user.displayName,
+          email: user.email
+        }
+      }
+    });
+
+    if (result.error) {
+      setError(result.error.message);
+    } else {
+      setError('');
+      if (result.paymentIntent.status === 'succeeded') {
+        const transactionId = result.paymentIntent.id;
+
+        // Store payment info
+        await axiosSecure.post('/payments', {
+          bookingId: booking._id,
+          email: user.email,
+          courtName: booking.courtName,
+          slots: booking.slots,
+          date: booking.date,
+          originalPrice: booking.price,
+          finalPrice: discountedPrice,
+          transactionId,
+          paymentMethod: result.paymentIntent.payment_method_types
+        });
+        console.log(booking.slots)
+
+        await Swal.fire({
+          icon: 'success',
+          title: 'Payment Successful!',
+          html: `<strong>Transaction ID:</strong> <code>${transactionId}</code>`,
+          confirmButtonText: 'Go to Confirmed Bookings',
+        });
+
+        navigate('/dashboard/confirmedBookings');
+      }
     }
   };
 
@@ -68,31 +123,31 @@ const PaymentPage = () => {
         />
         <button
           onClick={handleApplyCoupon}
-          className="bg-green-600 text-white px-4 rounded hover:bg-green-700"
+          className="bg-green-600 btn text-white px-4 rounded hover:bg-green-700"
         >
           Apply
         </button>
       </div>
 
-      <form onSubmit={handlePaymentSubmit} className="space-y-4 bg-white shadow p-6 rounded">
+      <form onSubmit={handleSubmit} className="space-y-4 bg-white shadow p-6 rounded">
         <input className="w-full p-2 border rounded" readOnly value={user.email} />
         <input className="w-full p-2 border rounded" readOnly value={booking.courtName} />
-        <input className="w-full p-2 border rounded" readOnly value={booking.slot} />
+        <input className="w-full p-2 border rounded" readOnly value={booking.slots} />
         <input className="w-full p-2 border rounded" readOnly value={booking.date} />
-        <input
-          className="w-full p-2 border rounded"
-          readOnly
-          value={`$${discountedPrice}`}
-        />
+        <input className="w-full p-2 border rounded" readOnly value={`$${discountedPrice}`} />
+
+        <CardElement className="p-2 border rounded" />
 
         <button
           type="submit"
           className="bg-yellow-600 btn text-white px-4 py-2 rounded hover:bg-yellow-700"
+          disabled={!stripe || !clientSecret}
         >
           Submit Payment
         </button>
       </form>
 
+      {error && <p className="text-red-500 mt-2">{error}</p>}
       {message && <p className="mt-4 text-blue-600">{message}</p>}
     </div>
   );

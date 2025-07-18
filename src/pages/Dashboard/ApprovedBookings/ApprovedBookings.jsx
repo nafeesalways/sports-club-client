@@ -6,7 +6,8 @@ import { AuthContext } from '../../../contexts/AuthContext';
 
 
 import Loader from '../../../Loader/Loader';
-import UseAxiosSecure from '../../../Hook/UseAxiosSecure';
+import UseAxiosSecure from '../../../hook/UseAxiosSecure';
+
 
 const ApprovedBookings = () => {
   const { user } = use(AuthContext);
@@ -36,7 +37,7 @@ const ApprovedBookings = () => {
   });
 
   const handlePayment = (booking) => {
-    navigate('/dashboard/paymentPage', { state: { booking } });
+    navigate(`/dashboard/payment`, { state: { booking } });
   };
 
   if (isLoading) return <Loader />;
@@ -63,7 +64,7 @@ const ApprovedBookings = () => {
               {bookings.map((booking) => (
                 <tr key={booking._id} className="border-t">
                   <td className="p-2 border">{booking.courtName}</td>
-                  <td className="p-2 border">{booking.slot}</td>
+                  <td className="p-2 border">{booking.slots}</td>
                   <td className="p-2 border">{booking.date}</td>
                   <td className="p-2 border">${booking.price}</td>
                   <td className="p-2 border space-x-2">

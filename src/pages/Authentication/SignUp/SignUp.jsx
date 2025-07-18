@@ -40,6 +40,7 @@ const SignUp = () => {
       const user = result.user;
 
       const userInfo={
+        name:data.name,
         email:data.email,
         role: 'user',//default role
         created_at: new Date().toISOString(),

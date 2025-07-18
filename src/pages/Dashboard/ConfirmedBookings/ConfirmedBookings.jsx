@@ -1,23 +1,23 @@
-import { use } from 'react';
-import { useQuery } from '@tanstack/react-query';
+import { use } from "react";
+import { useQuery } from "@tanstack/react-query";
 
-
-
-import { AuthContext } from '../../../contexts/AuthContext';
-import Loader from '../../../Loader/Loader';
-import UseAxiosSecure from '../../../Hook/UseAxiosSecure';
+import { AuthContext } from "../../../contexts/AuthContext";
+import Loader from "../../../Loader/Loader";
+import UseAxiosSecure from "../../../hook/UseAxiosSecure";
 
 const ConfirmedBookings = () => {
   const { user } = use(AuthContext);
   const axiosSecure = UseAxiosSecure();
 
   const { data: bookings = [], isLoading } = useQuery({
-    queryKey: ['confirmed-bookings', user?.email],
+    queryKey: ["confirmed-bookings", user?.email],
     enabled: !!user?.email,
     queryFn: async () => {
-      const res = await axiosSecure.get(`/member/confirmed-bookings?email=${user.email}`);
+      const res = await axiosSecure.get(
+        `/member/confirmed-bookings?email=${user.email}`
+      );
       return res.data;
-    }
+    },
   });
 
   if (isLoading) return <Loader />;
@@ -43,9 +43,9 @@ const ConfirmedBookings = () => {
               {bookings.map((booking) => (
                 <tr key={booking._id} className="border-t">
                   <td className="p-2 border">{booking.courtName}</td>
-                  <td className="p-2 border">{booking.slot}</td>
+                  <td className="p-2 border">{booking.slots}</td>
                   <td className="p-2 border">{booking.date}</td>
-                  <td className="p-2 border">${booking.price}</td>
+                  <td className="p-2 border">${booking.finalPrice}</td>
                 </tr>
               ))}
             </tbody>

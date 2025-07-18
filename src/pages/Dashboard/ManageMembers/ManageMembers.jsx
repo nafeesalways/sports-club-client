@@ -1,6 +1,7 @@
 import {  useState } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import UseAxiosSecure from '../../../Hook/UseAxiosSecure';
+import UseAxiosSecure from '../../../hook/UseAxiosSecure';
+
 
 
 

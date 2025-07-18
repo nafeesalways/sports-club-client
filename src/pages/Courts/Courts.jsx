@@ -1,11 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
 
-import UseAxiosSecure from "../../Hook/UseAxiosSecure";
+
 import Loader from "../../Loader/Loader";
 import { useNavigate } from "react-router";
 import { use, useState } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 import CourtBookingModal from "./CourtBookingModal";
+import UseAxiosSecure from "../../hook/UseAxiosSecure";
 
 const CourtsPage = () => {
   const [selectedCourt, setSelectedCourt] = useState(null);

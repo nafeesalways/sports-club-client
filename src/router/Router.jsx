@@ -25,10 +25,11 @@ import MemberRoute from "../routes/MemberRoute";
 import MemberProfile from "../pages/Dashboard/MemberProfile/MemberProfile";
 import MemberPendingBookings from "../pages/Dashboard/MemberPendingBookings/MemberPendingBookings";
 import ApprovedBookings from "../pages/Dashboard/ApprovedBookings/ApprovedBookings";
-import PaymentPage from "../pages/Dashboard/PaymentPage/PaymentPage";
 import PaymentHistory from "../pages/Dashboard/PaymentHistory/PaymentHistory";
 import MemberAnnouncements from "../pages/Dashboard/MemberAnnouncements/MemberAnnouncements";
 import Forbidden from "../pages/Dashboard/Forbidden/Forbidden";
+import ConfirmedBookings from "../pages/Dashboard/ConfirmedBookings/ConfirmedBookings";
+import Payment from "../pages/Dashboard/Payment/Payment";
 
 export const router = createBrowserRouter([
   {
@@ -139,9 +140,14 @@ export const router = createBrowserRouter([
         element:<MemberRoute><ApprovedBookings></ApprovedBookings></MemberRoute>,
       },
       {
-        path:'paymentPage',
-        element:<MemberRoute><PaymentPage></PaymentPage></MemberRoute>,
+       path:'confirmedBookings',
+       element:<MemberRoute><ConfirmedBookings></ConfirmedBookings></MemberRoute>,
       },
+      {
+        path:'payment',
+        element:<MemberRoute><Payment></Payment></MemberRoute>,
+      },
+      
       {
         path:'paymentHistory',
         element:<MemberRoute><PaymentHistory></PaymentHistory></MemberRoute>,
