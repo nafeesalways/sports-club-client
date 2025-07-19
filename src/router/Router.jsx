@@ -30,6 +30,7 @@ import MemberAnnouncements from "../pages/Dashboard/MemberAnnouncements/MemberAn
 import Forbidden from "../pages/Dashboard/Forbidden/Forbidden";
 import ConfirmedBookings from "../pages/Dashboard/ConfirmedBookings/ConfirmedBookings";
 import Payment from "../pages/Dashboard/Payment/Payment";
+import DashboardHome from "../pages/Dashboard/DashboardHome/DashboardHome";
 
 export const router = createBrowserRouter([
   {
@@ -77,6 +78,10 @@ export const router = createBrowserRouter([
     path:'/dashboard',
     element:<PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
     children:[
+      {
+        index:true,
+        Component:DashboardHome,
+      },
       {
         path:'myProfile',
         Component:MyProfile,
