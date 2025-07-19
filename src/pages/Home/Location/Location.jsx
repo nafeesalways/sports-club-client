@@ -25,7 +25,7 @@ const Location = () => {
           <p>🏟️ Sports Club Arena</p>
           <p>📍 123 Fitness Lane, Sector 7, Chattogram, Bangladesh</p>
           <p>📞 +880 1234-567890</p>
-          <p>✉️ info@sportsclub.com</p>
+          <p>✉️ info@championclub.com</p>
           <p className="text-sm text-gray-600">Open: 6:00 AM – 10:00 PM (Everyday)</p>
         </div>
 

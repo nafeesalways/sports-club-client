@@ -24,10 +24,10 @@ const Footer = () => {
         <div className="flex flex-col gap-3">
           <h3 className="font-bold text-lg">Contact Us</h3>
           <p className="flex items-center gap-2">
-            <FaMapMarkerAlt /> 123 Sporty Street, Dhaka, Bangladesh
+            <FaMapMarkerAlt /> 123 Sporty Street, Chattogram, Bangladesh
           </p>
           <p className="flex items-center gap-2">
-            <FaPhoneAlt /> +880 1234 567890
+            <FaPhoneAlt /> +880 1234-567890
           </p>
           <p className="flex items-center gap-2">
             <FaEnvelope /> info@championclub.com

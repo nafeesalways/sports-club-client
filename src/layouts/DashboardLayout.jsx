@@ -61,166 +61,198 @@ const DashboardLayout = () => {
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <ul className="menu bg-yellow-100 border border-amber-600 text-base-content min-h-full w-80 p-4">
+        <ul className="menu bg-white/70 backdrop-blur-md shadow-lg rounded-r-2xl border border-amber-500 text-base-content min-h-full w-80 p-5 space-y-1">
           {/* Sidebar content here */}
           <li>
-            <NavLink className="text-lg text-yellow-500 font-extrabold" to="/">
-              <FaHome></FaHome> Home
+            <NavLink
+              className="flex items-center gap-2 text-lg font-semibold text-yellow-600 hover:bg-yellow-100 rounded-lg px-3 py-2 transition"
+              to="/"
+            >
+              <FaHome className="text-xl" />
+              Home
             </NavLink>
           </li>
+
           <li>
             <NavLink
-              className="text-lg text-yellow-500 font-extrabold"
+              className="flex items-center gap-2 text-lg font-semibold text-yellow-600 hover:bg-yellow-100 rounded-lg px-3 py-2 transition"
               to="/dashboard/myProfile"
             >
-              <FaUserCircle></FaUserCircle> My Profile
+              <FaUserCircle className="text-xl" />
+              My Profile
             </NavLink>
           </li>
+
           <li>
             <NavLink
-              className="text-lg text-yellow-500 font-extrabold"
+              className="flex items-center gap-2 text-lg font-semibold text-yellow-600 hover:bg-yellow-100 rounded-lg px-3 py-2 transition"
               to="/dashboard/pendingBookings"
             >
-              <FaClipboardList></FaClipboardList> Pending Bookings
+              <FaClipboardList className="text-xl" />
+              Pending Bookings
             </NavLink>
           </li>
+
           <li>
             <NavLink
-              className="text-lg text-yellow-500 font-extrabold"
+              className="flex items-center gap-2 text-lg font-semibold text-yellow-600 hover:bg-yellow-100 rounded-lg px-3 py-2 transition"
               to="/dashboard/announcements"
             >
-              {" "}
-              <FaBullhorn></FaBullhorn>Announcements
+              <FaBullhorn className="text-xl" />
+              Announcements
             </NavLink>
           </li>
-          {/* admin routes */}
 
+          {/* Admin routes */}
           {!roleLoading && role === "admin" && (
             <>
+              <li className="mt-4 mb-2 text-sm font-bold text-amber-700 uppercase">
+                Admin Dashboard
+              </li>
+
               <li>
                 <NavLink
-                  className="text-lg text-yellow-500 font-extrabold"
+                  className="flex items-center gap-2 text-lg font-semibold text-yellow-600 hover:bg-yellow-100 rounded-lg px-3 py-2 transition"
                   to="/dashboard/makeAdmin"
                 >
-                  <FaUserShield></FaUserShield> Make Admin
+                  <FaUserShield className="text-xl" />
+                  Make Admin
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                  className="text-lg text-yellow-500 font-extrabold"
+                  className="flex items-center gap-2 text-lg font-semibold text-yellow-600 hover:bg-yellow-100 rounded-lg px-3 py-2 transition"
                   to="/dashboard/adminProfile"
                 >
-                  <FaUserCircle></FaUserCircle> Admin Profile
+                  <FaUserCircle className="text-xl" />
+                  Admin Profile
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                  className="text-lg text-yellow-500 font-extrabold"
+                  className="flex items-center gap-2 text-lg font-semibold text-yellow-600 hover:bg-yellow-100 rounded-lg px-3 py-2 transition"
                   to="/dashboard/manageBookingApproval"
                 >
-                  <FaCalendarCheck></FaCalendarCheck> Manage Booking Approval
+                  <FaCalendarCheck className="text-xl" />
+                  Manage Booking Approval
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                  className="text-lg text-yellow-500 font-extrabold"
+                  className="flex items-center gap-2 text-lg font-semibold text-yellow-600 hover:bg-yellow-100 rounded-lg px-3 py-2 transition"
                   to="/dashboard/manageMembers"
                 >
-                  <FaUsersCog></FaUsersCog> Manage Members
+                  <FaUsersCog className="text-xl" />
+                  Manage Members
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                  className="text-lg text-yellow-500 font-extrabold"
+                  className="flex items-center gap-2 text-lg font-semibold text-yellow-600 hover:bg-yellow-100 rounded-lg px-3 py-2 transition"
                   to="/dashboard/allUsers"
                 >
-                  <FaUsers></FaUsers> All Users
+                  <FaUsers className="text-xl" />
+                  All Users
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                  className="text-lg text-yellow-500 font-extrabold"
+                  className="flex items-center gap-2 text-lg font-semibold text-yellow-600 hover:bg-yellow-100 rounded-lg px-3 py-2 transition"
                   to="/dashboard/manageCourts"
                 >
-                  <FaWarehouse></FaWarehouse> Manage Courts
+                  <FaWarehouse className="text-xl" />
+                  Manage Courts
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                  className="text-lg text-yellow-500 font-extrabold"
+                  className="flex items-center gap-2 text-lg font-semibold text-yellow-600 hover:bg-yellow-100 rounded-lg px-3 py-2 transition"
                   to="/dashboard/manageBookings"
                 >
-                  <FaCalendarCheck></FaCalendarCheck> Manage Bookings
+                  <FaCalendarCheck className="text-xl" />
+                  Manage Bookings
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                  className="text-lg text-yellow-500 font-extrabold"
+                  className="flex items-center gap-2 text-lg font-semibold text-yellow-600 hover:bg-yellow-100 rounded-lg px-3 py-2 transition"
                   to="/dashboard/manageCoupons"
                 >
-                  <FaTags></FaTags> Manage Coupons
+                  <FaTags className="text-xl" />
+                  Manage Coupons
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                  className="text-lg text-yellow-500 font-extrabold"
+                  className="flex items-center gap-2 text-lg font-semibold text-yellow-600 hover:bg-yellow-100 rounded-lg px-3 py-2 transition"
                   to="/dashboard/makeAnnouncement"
                 >
-                  <FaBullhorn></FaBullhorn> Make Announcements
+                  <FaBullhorn className="text-xl" />
+                  Make Announcements
                 </NavLink>
               </li>
             </>
           )}
 
+          {/* Member routes */}
           {!roleLoading && role === "member" && (
             <>
+              <li className="mt-4 mb-2 text-sm font-bold text-amber-700 uppercase">
+                Member Dashboard
+              </li>
+
               <li>
                 <NavLink
-                  className="text-lg text-yellow-500 font-extrabold"
+                  className="flex items-center gap-2 text-lg font-semibold text-yellow-600 hover:bg-yellow-100 rounded-lg px-3 py-2 transition"
                   to="/dashboard/memberProfile"
                 >
-                  <FaUserCircle></FaUserCircle> Member Profile
+                  <FaUserCircle className="text-xl" />
+                  Member Profile
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                  className="text-lg text-yellow-500 font-extrabold"
+                  className="flex items-center gap-2 text-lg font-semibold text-yellow-600 hover:bg-yellow-100 rounded-lg px-3 py-2 transition"
                   to="/dashboard/memberPendingBookings"
                 >
-                  <FaCalendarCheck></FaCalendarCheck> Member Pending Bookings
+                  <FaCalendarCheck className="text-xl" />
+                  Member Pending Bookings
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                  className="text-lg text-yellow-500 font-extrabold"
+                  className="flex items-center gap-2 text-lg font-semibold text-yellow-600 hover:bg-yellow-100 rounded-lg px-3 py-2 transition"
                   to="/dashboard/approvedBookings"
                 >
-                  <MdAssignmentTurnedIn></MdAssignmentTurnedIn> Member Approved
-                  Bookings
+                  <MdAssignmentTurnedIn className="text-xl" />
+                  Approved Bookings
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                  className="text-lg text-yellow-500 font-extrabold"
+                  className="flex items-center gap-2 text-lg font-semibold text-yellow-600 hover:bg-yellow-100 rounded-lg px-3 py-2 transition"
                   to="/dashboard/confirmedBookings"
                 >
-                  <MdVerified></MdVerified> Confirmed Bookings
+                  <MdVerified className="text-xl" />
+                  Confirmed Bookings
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                  className="text-lg text-yellow-500 font-extrabold"
+                  className="flex items-center gap-2 text-lg font-semibold text-yellow-600 hover:bg-yellow-100 rounded-lg px-3 py-2 transition"
                   to="/dashboard/paymentHistory"
                 >
-                  <FaHistory></FaHistory> Payment History
+                  <FaHistory className="text-xl" />
+                  Payment History
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                  className="text-lg text-yellow-500 font-extrabold"
+                  className="flex items-center gap-2 text-lg font-semibold text-yellow-600 hover:bg-yellow-100 rounded-lg px-3 py-2 transition"
                   to="/dashboard/memberAnnouncements"
                 >
-                  <MdAnnouncement></MdAnnouncement> Member Announcements
+                  <MdAnnouncement className="text-xl" />
+                  Member Announcements
                 </NavLink>
               </li>
             </>
