@@ -50,7 +50,6 @@ const ManageBookings = () => {
               className="bg-white border rounded p-4 shadow flex flex-col md:flex-row justify-between items-start md:items-center gap-2"
             >
               <div>
-                <p><strong>User:</strong> {booking.email}</p>
                 <p><strong>Court:</strong> {booking.courtName || 'N/A'}</p>
                 <p><strong>Slot:</strong> {booking.slots}</p>
                 <p><strong>Date:</strong> {booking.date}</p>
