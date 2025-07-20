@@ -1,12 +1,47 @@
-# React + Vite
+# 🏟️ Champion Sports Club Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to **Champion Sports Club** — a full-featured court and session booking platform that connects sports lovers to available courts, manages booking approvals, and handles user membership and payments through a streamlined dashboard system.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔐 Admin Credentials
 
-## Expanding the ESLint configuration
+- **Username (Email)**: `tim@gmail.com`
+- **Password**: `123456`  
+> (Use for testing admin features)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🌐 Live Site
+
+👉 [Champion Club Live Website](https://champion-sports-club.web.app)
+
+---
+
+## 🚀 Features
+
+- ✅ **Public Courts Page**: Browse all courts with slot options, pricing, and booking features.
+- 🔒 **Authentication**: Secure sign-up/sign-in with email/password or Google login.
+- 🧑‍💼 **Admin Dashboard**:
+  - Manage users, courts, bookings, coupons, and announcements.
+  - Accept or reject pending booking requests.
+- 🏅 **Member Dashboard**:
+  - View profile, track booking status (pending, approved, confirmed), and access payment history.
+- 💳 **Stripe Payment Integration**: Complete payment with coupon support.
+- 📊 **Booking Status Analytics**: Admins can view pie chart summaries of booking statuses.
+- 📆 **Multi-slot Booking Support**: Book one or more time slots for each court.
+- 📢 **Announcements**: Admins can post announcements; members can view them on their dashboard.
+- 🛡️ **Role-Based Access**: Routes are protected for user/admin/member access.
+- 📱 **Responsive UI**: Built with **Tailwind CSS** and **Daisy UI**, mobile-friendly and clean.
+
+---
+
+![Champion Sports Club Preview](https://images.unsplash.com/photo-1603351820256-a5fa8ac128e3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c3BvcnRzJTIwY2x1YnxlbnwwfHwwfHx8MA%3D%3D)
+
+
+## ⚙️ Project Setup Guide (Local Development)
+
+1. **Clone the repo**:
+   ```bash
+   git clone https://github.com/your-username/champion-sports-club.git
+   cd champion-sports-club
