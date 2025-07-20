@@ -3,11 +3,14 @@ import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../../contexts/AuthContext";
 import { toast } from "react-toastify";
+import UseAxios from "../../../hook/UseAxios";
 
 const SignIn = () => {
   const { googleSignIn, signIn } = use(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
+  const from = location.state?.from || '/';
+  const axiosInstance =UseAxios();
   const {
     register,
     handleSubmit,
@@ -31,9 +34,20 @@ const SignIn = () => {
   };
   const handleGoogleSignIn = () => {
     googleSignIn()
-      .then((result) => {
-        navigate("/");
-        console.log(result.user);
+      .then(async(result) => {
+        const user = result.user;
+        const userInfo = {
+          email: user.email,
+          role: 'user', //default role
+          created_at: new Date().toISOString(),
+          last_log_in: new Date().toISOString(),
+        };
+
+        const res = await axiosInstance.post('/users',userInfo);
+        console.log('user update info',res.data);
+
+        navigate(from);
+
       })
       .catch((error) => {
         console.log(error);
@@ -73,7 +87,7 @@ const SignIn = () => {
             <a className="link link-hover">Forgot password?</a>
           </div>
           <button type="submit" className="btn bg-yellow-400 mt-4">
-           Sign In
+            Sign In
           </button>
           <p className="text-gray-600">
             Don't have any account? Please{" "}
