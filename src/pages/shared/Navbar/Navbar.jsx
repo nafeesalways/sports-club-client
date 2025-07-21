@@ -70,11 +70,11 @@ const Navbar = () => {
           </ul>
         </div>
         <img
-          className="w-10 h-10"
+          className=" w-5 h-5 lg:w-10 lg:h-10"
           src="https://cdn-icons-png.flaticon.com/128/1599/1599287.png"
           alt=""
         />
-        <a href="/" className="cursor-pointer font-bold text-3xl italic">
+        <a href="/" className="cursor-pointer font-bold sm:text-sm lg:text-3xl italic">
           CHAMPION
         </a>
       </div>
