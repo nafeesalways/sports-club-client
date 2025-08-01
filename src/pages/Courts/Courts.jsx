@@ -19,21 +19,24 @@ const Courts = () => {
   const axiosSecure = UseAxiosSecure();
   const navigate = useNavigate();
   const { user } = use(AuthContext);
-
+   const { data: courts = []} = useQuery({
+    queryKey: ["courts",user?.email],
+    queryFn: async () => {
+      console.log('test')
+      const res = await axiosSecure.get("/courts");
+      return res.data;
+    },
+  });
+  
+console.log({courts})
   const handleBookNow = (court) => {
     if (!user) return navigate("/signin");
     setSelectedCourt(court);
   };
 
-  const { data: courts = [], isLoading } = useQuery({
-    queryKey: ["courts"],
-    queryFn: async () => {
-      const res = await axiosSecure.get("/admin/courts");
-      return res.data;
-    },
-  });
+ 
 
-  if (isLoading) return <Loader />;
+ 
 
   const perPage = viewMode === "card" ? cardsPerPage : rowsPerPage;
   const startIndex = (currentPage - 1) * perPage;
