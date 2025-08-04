@@ -36,7 +36,7 @@ Welcome to **Champion Sports Club** — a full-featured court and session bookin
 
 ---
 
-![Champion Sports Club Preview](https://images.unsplash.com/photo-1603351820256-a5fa8ac128e3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c3BvcnRzJTIwY2x1YnxlbnwwfHwwfHx8MA%3D%3D)
+![Champion Sports Club Preview](https://plus.unsplash.com/premium_photo-1671436823463-b2273c7282e8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmFza2V0YmFsbCUyMGNvdXJ0c3xlbnwwfHwwfHx8MA%3D%3D)
 
 
 ## ⚙️ Project Setup Guide (Local Development)

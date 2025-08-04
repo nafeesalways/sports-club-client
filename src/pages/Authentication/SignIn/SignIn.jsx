@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import UseAxios from "../../../hook/UseAxios";
 
 const SignIn = () => {
-  const { googleSignIn, signIn } = use(AuthContext);
+  const { googleSignIn, signIn } = use(AuthContext);  
   const location = useLocation();
   const navigate = useNavigate();
   const from = location.state?.from || '/';
