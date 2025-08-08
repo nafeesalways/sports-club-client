@@ -44,6 +44,6 @@ Welcome to **Champion Sports Club** — a full-featured court and session bookin
 1. **Clone the repo**:
   ```bash
 git clone https://github.com/your-username/food-expiry-tracker.git
-cd food-expiry-tracker
+cd sports-club-client
 npm install
 npm run dev
