@@ -42,6 +42,8 @@ Welcome to **Champion Sports Club** — a full-featured court and session bookin
 ## ⚙️ Project Setup Guide (Local Development)
 
 1. **Clone the repo**:
-   ```bash
-   git clone https://github.com/your-username/champion-sports-club.git
-   cd champion-sports-club
+  ```bash
+git clone https://github.com/your-username/food-expiry-tracker.git
+cd food-expiry-tracker
+npm install
+npm run dev
