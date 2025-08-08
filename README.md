@@ -14,7 +14,7 @@ Welcome to **Champion Sports Club** — a full-featured court and session bookin
 
 ## 🌐 Live Site
 
-👉 [Champion Club Live Website](https://champion-club.netlify.app)
+👉 [Champion Club Live Website](https://champion-club1.netlify.app/)
 
 ---
 
