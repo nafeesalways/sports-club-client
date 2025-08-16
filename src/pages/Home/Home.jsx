@@ -6,6 +6,7 @@ import Promotions from './Promotions/Promotions';
 import KeyFeatures from './KeyFeatures/KeyFeatures';
 import Reviews from './Reviews/Reviews';
 import Faq from './FAQ/Faq';
+import Newsletter from './NewsLetter/NewsLetter';
 
 const Home = () => {
     return (
@@ -16,6 +17,7 @@ const Home = () => {
         <Promotions></Promotions>
         <KeyFeatures></KeyFeatures>
         <Faq></Faq>
+        <Newsletter></Newsletter>
         <Reviews></Reviews>
         </div>
     );

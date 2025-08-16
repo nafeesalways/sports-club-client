@@ -44,7 +44,7 @@ const Reviews = () => {
                 className="w-14 h-14 rounded-full border-2 border-blue-500"
               />
               <div>
-                <h4 className="font-semibold text-lg">{review.name}</h4>
+                <h4 className="font-semibold text-lg text-yellow-600">{review.name}</h4>
                 <p className="text-sm text-gray-500">{review.role}</p>
               </div>
             </div>
