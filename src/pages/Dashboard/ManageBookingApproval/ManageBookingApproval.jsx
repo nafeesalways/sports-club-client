@@ -64,10 +64,10 @@ const ManageBookingApproval = () => {
               className="border rounded p-4 shadow bg-white flex justify-between items-center"
             >
               <div>
-                <p><strong>Court Name:</strong> {booking.courtName}</p>
-                <p><strong>Slots:</strong> {Array.isArray(booking.slots) ? booking.slots.join(', ') : booking.slots}</p>
-                <p><strong>Date:</strong> {new Date(booking.date).toLocaleDateString()}</p>
-                <p><strong>Price:</strong> ${booking.price}</p>
+                <p><strong className='text-yellow-500'>Court Name:</strong> <span className='text-yellow-600'>{booking.courtName}</span></p>
+                <p><strong className='text-yellow-500'>Slots:</strong><span className='text-yellow-600'> {Array.isArray(booking.slots) ? booking.slots.join(', ') : booking.slots}</span></p>
+                <p><strong className='text-yellow-500'>Date:</strong> <span className='text-yellow-600'>{new Date(booking.date).toLocaleDateString()}</span></p>
+                <p><strong className='text-yellow-500'>Price:</strong> <span className='text-yellow-600'>${booking.price}</span></p>
               </div>
               <div className="space-x-2">
                 <button

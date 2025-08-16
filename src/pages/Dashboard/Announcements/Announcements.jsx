@@ -27,7 +27,7 @@ const Announcements = () => {
         <ul className="space-y-3">
           {announcements.map(item => (
             <li key={item._id} className="bg-blue-100 p-3 rounded shadow">
-              <p className="font-semibold">{item.title}</p>
+              <p className="font-semibold text-yellow-500">{item.title}</p>
               <p className="text-sm text-gray-700">{item.message}</p>
               <p className="text-xs text-gray-500">
                 Date: {new Date(item.date).toLocaleDateString()}

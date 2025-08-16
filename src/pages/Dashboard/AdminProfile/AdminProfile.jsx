@@ -31,23 +31,23 @@ const AdminProfile = () => {
           className="w-24 h-24 rounded-full object-cover border"
         />
         <div className="space-y-2">
-          <p><strong>Name:</strong> {user?.displayName}</p>
-          <p><strong>Email:</strong> {user?.email}</p>
+          <p><strong className='text-yellow-500'>Name:</strong> <span className='text-yellow-600'>{user?.displayName}</span></p>
+           <p><strong className='text-yellow-500'>Email:</strong> <span className='text-yellow-600'>{user?.email}</span></p>
         </div>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
         <div className="bg-blue-100 text-center p-4 rounded shadow">
-          <p className="text-3xl font-bold">{stats.totalUsers}</p>
-          <p>Total Users</p>
+          <p className="text-3xl font-bold text-yellow-500">{stats.totalUsers}</p>
+          <p className='text-yellow-700'>Total Users</p>
         </div>
         <div className="bg-green-100 text-center p-4 rounded shadow">
-          <p className="text-3xl font-bold">{stats.totalMembers}</p>
-          <p>Total Members</p>
+          <p className="text-3xl font-bold text-yellow-500">{stats.totalMembers}</p>
+          <p  className='text-yellow-700'>Total Members</p>
         </div>
         <div className="bg-yellow-100 text-center p-4 rounded shadow">
-          <p className="text-3xl font-bold">{stats.totalCourts}</p>
-          <p>Total Courts</p>
+          <p className="text-3xl font-bold text-yellow-500">{stats.totalCourts}</p>
+          <p className='text-yellow-700'>Total Courts</p>
         </div>
       </div>
     </div>

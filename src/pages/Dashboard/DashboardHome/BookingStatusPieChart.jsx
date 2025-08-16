@@ -25,7 +25,7 @@ const BookingStatusPieChart = () => {
 
   return (
     <div className="p-6 bg-white shadow rounded-xl">
-      <h2 className="text-2xl font-bold mb-4">Booking Status Pie Chart</h2>
+      <h2 className="text-2xl font-bold mb-4 text-yellow-600">Booking Status Pie Chart</h2>
 
       <ResponsiveContainer width="100%" height={300}>
         <PieChart>

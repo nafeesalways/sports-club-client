@@ -27,7 +27,7 @@ const MemberDashboard = () => {
 
   return (
     <div className="p-6 bg-white rounded-xl shadow w-full">
-      <h2 className="text-xl font-bold mb-4"> Booking Status of Member</h2>
+      <h2 className="text-xl font-bold mb-4 text-yellow-600"> Booking Status of Member</h2>
       <ResponsiveContainer width="100%" height={300}>
         <PieChart>
           <Pie

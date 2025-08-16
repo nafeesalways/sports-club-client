@@ -33,7 +33,7 @@ const ManageBookings = () => {
           onChange={(e) => setInput(e.target.value)}
           className="border p-2 rounded w-full sm:w-2/3"
         />
-        <button type="submit" className="bg-yellow-600  text-white px-4 rounded hover:bg-yellow-700">
+        <button type="submit" className="bg-yellow-600 btn  text-white px-4 rounded hover:bg-yellow-700">
           Search
         </button>
       </form>
@@ -50,10 +50,10 @@ const ManageBookings = () => {
               className="bg-white border rounded p-4 shadow flex flex-col md:flex-row justify-between items-start md:items-center gap-2"
             >
               <div>
-                <p><strong>Court:</strong> {booking.courtName || 'N/A'}</p>
-                <p><strong>Slot:</strong> {booking.slots}</p>
-                <p><strong>Date:</strong> {booking.date}</p>
-                <p><strong>Price:</strong> ${booking.price}</p>
+                <p><strong className='text-yellow-500'>Court:</strong><span className='text-yellow-600'> {booking.courtName || 'N/A'}</span></p>
+                <p><strong className='text-yellow-500'>Slot:</strong> <span className='text-yellow-600'>{booking.slots}</span></p>
+                <p><strong className='text-yellow-500'>Date:</strong><span className='text-yellow-600'> {booking.date}</span></p>
+                <p><strong className='text-yellow-500'>Price:</strong><span className='text-yellow-600'> ${booking.price}</span></p>
               </div>
             </div>
           ))}

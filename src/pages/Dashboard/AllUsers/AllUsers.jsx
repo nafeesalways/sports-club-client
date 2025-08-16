@@ -54,8 +54,8 @@ const AllUsers = () => {
               className="bg-white border rounded p-4 shadow flex justify-between items-center"
             >
               <div>
-                <p><strong>Email:</strong> {user.email}</p>
-                <p><strong>Role:</strong> {user.role}</p>
+                <p><strong className='text-yellow-500'>Email:</strong><span className='text-yellow-600'> {user.email}</span></p>
+                <p><strong className='text-yellow-500'>Role:</strong> <span className='text-yellow-500'>{user.role}</span></p>
               </div>
             </div>
           ))}

@@ -86,7 +86,7 @@ const MakeAnnouncement = () => {
               className="bg-white border p-4 rounded shadow flex justify-between"
             >
               <div>
-                <p className="font-semibold">{item.title}</p>
+                <p className="font-semibold text-yellow-600">{item.title}</p>
                 <p className="text-sm text-gray-700">{item.message}</p>
                 <p className="text-xs text-gray-500">
                   {new Date(item.date).toLocaleDateString()}
@@ -95,13 +95,13 @@ const MakeAnnouncement = () => {
               <div className="space-x-2">
                 <button
                   onClick={() => handleEdit(item)}
-                  className="bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-600"
+                  className="bg-yellow-500 btn text-white px-3 py-1 rounded hover:bg-yellow-600"
                 >
                   Edit
                 </button>
                 <button
                   onClick={() => deleteMutation.mutate(item._id)}
-                  className="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700"
+                  className="bg-red-600 btn text-white px-3 py-1 rounded hover:bg-red-700"
                 >
                   Delete
                 </button>

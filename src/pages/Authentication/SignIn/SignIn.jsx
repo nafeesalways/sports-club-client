@@ -89,7 +89,7 @@ const SignIn = () => {
           <button type="submit" className="btn bg-yellow-400 mt-4">
             Sign In
           </button>
-          <p className="text-gray-600">
+          <p className="text-gray-300 font-bold">
             Don't have any account? Please{" "}
             <Link
               className="text-yellow-400 hover:underline text-md font-semibold"

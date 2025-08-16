@@ -31,7 +31,7 @@ const Blogs = () => {
   return (
     <section className="py-16 bg-gray-100 min-h-screen">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12">📚 Developer Blogs</h2>
+        <h2 className="text-4xl font-bold text-center text-yellow-600 mb-12">📚 Developer Blogs</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {blogs.map((blog, index) => (
             <div
@@ -39,7 +39,7 @@ const Blogs = () => {
               className="bg-white rounded-xl shadow-md p-6 transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl"
             >
               <p className="text-sm text-gray-500 mb-2">{blog.date}</p>
-              <h3 className="text-xl font-semibold mb-2">{blog.title}</h3>
+              <h3 className="text-xl font-semibold mb-2 text-yellow-500">{blog.title}</h3>
               <p className="text-gray-700">{blog.excerpt}</p>
             </div>
           ))}

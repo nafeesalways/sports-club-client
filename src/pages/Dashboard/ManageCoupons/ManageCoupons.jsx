@@ -91,20 +91,20 @@ const ManageCoupons = () => {
           {coupons.map((coupon) => (
             <div key={coupon._id} className="bg-white border p-4 rounded shadow flex justify-between">
               <div>
-                <p><strong>Code:</strong> {coupon.code}</p>
-                <p><strong>Discount:</strong> {coupon.discount}%</p>
-                <p><strong>Expires:</strong> {new Date(coupon.expiresAt).toLocaleDateString()}</p>
+                <p><strong className='text-yellow-500'>Code:</strong><span className='text-yellow-600'> {coupon.code}</span></p>
+                <p><strong className='text-yellow-500'>Discount:</strong> <span className='text-yellow-600'>{coupon.discount}%</span></p>
+                <p><strong className='text-yellow-500'>Expires:</strong> <span className='text-yellow-600'>{new Date(coupon.expiresAt).toLocaleDateString()}</span></p>
               </div>
               <div className="space-x-2">
                 <button
                   onClick={() => handleEdit(coupon)}
-                  className="bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-600"
+                  className="bg-yellow-500 btn text-white px-3 py-1 rounded hover:bg-yellow-600"
                 >
                   Edit
                 </button>
                 <button
                   onClick={() => deleteCoupon.mutate(coupon._id)}
-                  className="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700"
+                  className="bg-red-600 btn text-white px-3 py-1 rounded hover:bg-red-700"
                 >
                   Delete
                 </button>

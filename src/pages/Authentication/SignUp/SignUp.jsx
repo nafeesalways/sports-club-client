@@ -110,7 +110,7 @@ const SignUp = () => {
             </p>
           )}
           <button className="btn bg-yellow-400 mt-4">Sign Up</button>
-          <p className="text-gray-600">
+          <p className="text-gray-300 font-bold">
             Already have an account?{" "}
             <Link
               className="text-yellow-400 hover:underline text-md font-semibold"

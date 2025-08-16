@@ -130,11 +130,11 @@ const PaymentPage = () => {
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-4 bg-white shadow p-6 rounded">
-        <input className="w-full p-2 border rounded" readOnly value={user.email} />
-        <input className="w-full p-2 border rounded" readOnly value={booking.courtName} />
-        <input className="w-full p-2 border rounded" readOnly value={booking.slots} />
-        <input className="w-full p-2 border rounded" readOnly value={booking.date} />
-        <input className="w-full p-2 border rounded" readOnly value={`$${discountedPrice}`} />
+        <input className="w-full p-2 border rounded text-yellow-600" readOnly value={user.email} />
+        <input className="w-full p-2 border rounded text-yellow-600" readOnly value={booking.courtName} />
+        <input className="w-full p-2 border rounded text-yellow-600" readOnly value={booking.slots} />
+        <input className="w-full p-2 border rounded text-yellow-600" readOnly value={booking.date} />
+        <input className="w-full p-2 border rounded text-yellow-600" readOnly value={`$${discountedPrice}`} />
 
         <CardElement className="p-2 border rounded" />
 

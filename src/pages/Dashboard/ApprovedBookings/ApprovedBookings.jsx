@@ -53,11 +53,11 @@ const ApprovedBookings = () => {
           <table className="min-w-full border">
             <thead className="bg-gray-100">
               <tr>
-                <th className="p-2 border">Court</th>
-                <th className="p-2 border">Slot</th>
-                <th className="p-2 border">Date</th>
-                <th className="p-2 border">Price</th>
-                <th className="p-2 border">Actions</th>
+                <th className="p-2 border text-yellow-600">Court</th>
+                <th className="p-2 border text-yellow-600">Slot</th>
+                <th className="p-2 border text-yellow-600">Date</th>
+                <th className="p-2 border text-yellow-600">Price</th>
+                <th className="p-2 border text-yellow-600">Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -70,13 +70,13 @@ const ApprovedBookings = () => {
                   <td className="p-2 border space-x-2">
                     <button
                       onClick={() => handlePayment(booking)}
-                      className="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700"
+                      className="bg-yellow-600 btn text-white px-3 py-1 rounded hover:bg-yellow-700"
                     >
                       Pay
                     </button>
                     <button
                       onClick={() => cancelBooking.mutate(booking._id)}
-                      className="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700"
+                      className="bg-red-600 btn text-white px-3 py-1 rounded hover:bg-red-700"
                     >
                       Cancel
                     </button>

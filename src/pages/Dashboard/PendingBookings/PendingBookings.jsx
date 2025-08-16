@@ -55,7 +55,7 @@ const PendingBookings = () => {
               <p><strong>Price:</strong> ${booking.price}</p>
               <button
                 onClick={() => handleCancel(booking._id)}
-                className="mt-2 bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"
+                className="mt-2 btn bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"
                 disabled={cancelMutation.isPending}
               >
                 {cancelMutation.isPending ? 'Cancelling...' : 'Cancel'}

@@ -3,10 +3,11 @@ import { useQuery } from '@tanstack/react-query';
 
 
 import Loader from '../../../Loader/Loader';
-import UseAxiosSecure from '../../../Hook/UseAxiosSecure';
+import useAxiosSecure from '../../../hook/UseAxiosSecure';
+
 
 const MemberAnnouncements = () => {
-  const axiosSecure = UseAxiosSecure();
+  const axiosSecure = useAxiosSecure();
 
   const { data: announcements = [], isLoading } = useQuery({
     queryKey: ['member-announcements'],

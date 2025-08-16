@@ -66,7 +66,7 @@ const MakeAdmin = () => {
         />
         <button
           onClick={handleSearch}
-          className="bg-yellow-600 text-white px-4 rounded hover:bg-yellow-700"
+          className="bg-yellow-600 btn text-white px-4 rounded hover:bg-yellow-700"
           disabled={loading}
         >
           {loading ? "Searching..." : "Search"}
@@ -79,21 +79,21 @@ const MakeAdmin = () => {
       searchedUsers &&
       searchedUsers.map(user=> <div key={user?._id} className="mt-4 border rounded p-4 shadow bg-white">
           <p>
-            <strong>Email:</strong> {user.email}
+            <strong className="text-yellow-500">Email:</strong> <span className="text-yellow-600">{user.email}</span>
           </p>
           <p>
-            <strong>Role:</strong> {user.role}
+            <strong className="text-yellow-500">Role:</strong> <span className="text-yellow-600">{user.role}</span>
           </p>
           <p>
-            <strong>Joined:</strong>{" "}
-            {new Date(user.created_at).toLocaleDateString()}
+            <strong className="text-yellow-500">Joined:</strong>{" "}
+           <span className="text-yellow-600"> {new Date(user.created_at).toLocaleDateString()}</span>
           </p>
 
           <div className="mt-4 flex gap-2">
             {user.role !== "admin" && (
               <button
                 onClick={() => handleRoleChange("admin",user?.email)}
-                className="bg-yellow-600 text-white px-3 py-1 rounded hover:bg-yellow-700"
+                className="bg-yellow-600 btn text-white px-3 py-1 rounded hover:bg-yellow-700"
                 disabled={toggleRoleMutation.isPending}
               >
                 {toggleRoleMutation.isPending ? "Processing..." : "Make Admin"}
@@ -102,7 +102,7 @@ const MakeAdmin = () => {
             {user.role === "admin" && (
               <button
                 onClick={() => handleRoleChange("user",user?.email)}
-                className="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700"
+                className="bg-red-600 text-white px-3 py-1 btn rounded hover:bg-red-700"
                 disabled={toggleRoleMutation.isPending}
               >
                 {toggleRoleMutation.isPending

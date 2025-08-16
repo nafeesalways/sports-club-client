@@ -27,7 +27,7 @@ const PaymentHistory = () => {
         <h2 className="text-2xl font-bold">Payment History</h2>
         <button
           onClick={() => setIsTableView(!isTableView)}
-          className="btn btn-sm bg-yellow-400 text-black hover:bg-yellow-500"
+          className="btn btn-sm bg-yellow-400 text-black hover:bg-yellow-600"
         >
           Switch to {isTableView ? "Card View" : "Table View"}
         </button>
@@ -40,15 +40,15 @@ const PaymentHistory = () => {
           <table className="min-w-full border rounded-lg">
             <thead className="bg-gray-100">
               <tr>
-                <th className="p-2 border">Court</th>
-                <th className="p-2 border">Date</th>
-                <th className="p-2 border">Original Price</th>
-                <th className="p-2 border">Paid Price</th>
+                <th className="p-2 border text-yellow-600">Court</th>
+                <th className="p-2 border text-yellow-600">Date</th>
+                <th className="p-2 border text-yellow-600">Original Price</th>
+                <th className="p-2 border text-yellow-600">Paid Price</th>
               </tr>
             </thead>
             <tbody>
               {payments.map((p) => (
-                <tr key={p._id} className="border-t hover:bg-gray-50">
+                <tr key={p._id} className="border-t hover:bg-yellow-700">
                   <td className="p-2 border">{p.courtName}</td>
                   <td className="p-2 border">{p.date}</td>
                   <td className="p-2 border">${p.originalPrice}</td>

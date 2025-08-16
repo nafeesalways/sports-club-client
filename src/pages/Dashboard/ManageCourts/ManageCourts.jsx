@@ -163,25 +163,25 @@ const ManageCourts = () => {
             >
               <div>
                 <p>
-                  <strong>Name:</strong> {court.name}
+                  <strong className="text-yellow-500">Name:</strong> <span className="text-yellow-600">{court.name}</span>
                 </p>
                 <p>
-                  <strong>Location:</strong> {court.location}
+                  <strong className="text-yellow-500">Location:</strong> <span className="text-yellow-600">{court.location}</span>
                 </p>
                 <p>
-                  <strong>Surface:</strong> {court.surface}
+                  <strong className="text-yellow-500">Surface:</strong> <span className="text-yellow-600">{court.surface}</span>
                 </p>
               </div>
               <div className="space-x-2">
                 <button
                   onClick={() => handleEdit(court)}
-                  className="bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-600"
+                  className="bg-yellow-500 btn text-white px-3 py-1 rounded hover:bg-yellow-600"
                 >
                   Edit
                 </button>
                 <button
                   onClick={() => deleteMutation.mutate(court._id)}
-                  className="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700"
+                  className="bg-red-600 btn text-white px-3 py-1 rounded hover:bg-red-700"
                 >
                   Delete
                 </button>

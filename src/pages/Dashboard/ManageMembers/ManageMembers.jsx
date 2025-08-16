@@ -60,8 +60,8 @@ const ManageMembers = () => {
               className="bg-white border rounded p-4 flex justify-between items-center shadow"
             >
               <div>
-                <p><strong>Name:</strong> {member.name || 'N/A'}</p>
-                <p><strong>Email:</strong> {member.email}</p>
+                <p><strong className='text-yellow-500'>Name:</strong> <span className='text-yellow-600'>{member.name || 'N/A'}</span></p>
+                <p><strong className='text-yellow-500'>Email:</strong><span className='text-yellow-600'> {member.email}</span></p>
               </div>
               <button
                 onClick={() => handleDelete(member.email)}

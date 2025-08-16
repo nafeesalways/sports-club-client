@@ -45,11 +45,11 @@ const MemberPendingBookings = () => {
           <table className="min-w-full border">
             <thead className="bg-gray-100">
               <tr>
-                <th className="p-2 border">Court</th>
-                <th className="p-2 border">Slot</th>
-                <th className="p-2 border">Date</th>
-                <th className="p-2 border">Price</th>
-                <th className="p-2 border">Action</th>
+                <th className="p-2 border text-yellow-600">Court</th>
+                <th className="p-2 border text-yellow-600">Slot</th>
+                <th className="p-2 border text-yellow-600">Date</th>
+                <th className="p-2 border text-yellow-600">Price</th>
+                <th className="p-2 border text-yellow-600">Action</th>
               </tr>
             </thead>
             <tbody>
@@ -61,7 +61,7 @@ const MemberPendingBookings = () => {
                   <td className="p-2 border">${booking.price}</td>
                   <td className="p-2 border">
                     <button
-                      className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"
+                      className="bg-red-500 btn text-white px-3 py-1 rounded hover:bg-red-600"
                       onClick={() => cancelBookingMutation.mutate(booking._id)}
                     >
                       Cancel

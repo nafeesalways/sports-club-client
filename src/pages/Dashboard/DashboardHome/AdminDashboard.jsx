@@ -15,9 +15,9 @@ const statusIcons = {
 };
 
 const statusColors = {
-  pending: 'bg-yellow-100 border-yellow-300',
-  approved: 'bg-green-100 border-green-300',
-  paid: 'bg-blue-100 border-blue-300',
+  pending: 'bg-yellow-100 border-yellow-300 text-yellow-700',
+  approved: 'bg-green-100 border-green-300 text-yellow-500',
+  paid: 'bg-blue-100 border-blue-300 text-yellow-500 font-bold',
 };
 
 const AdminDashboard= () => {

@@ -28,12 +28,12 @@ const MemberProfile = () => {
         <img
           src={user?.photoURL}
           alt="Profile"
-          className="w-24 h-24 rounded-full object-cover border"
+          className="w-24 h-24 rounded-full object-cover border text-yellow-700"
         />
         <div className="space-y-2">
-          <p><strong>Name:</strong> {user?.displayName}</p>
-          <p><strong>Email:</strong> {user?.email}</p>
-          <p><strong>Member Since:</strong> {memberSince ? new Date(memberSince).toLocaleDateString() : 'N/A'}</p>
+          <p><strong className='text-yellow-500'>Name:</strong><span className='text-yellow-600'> {user?.displayName}</span></p>
+          <p><strong className='text-yellow-500'>Email:</strong><span className='text-yellow-600'>{user?.email}</span></p>
+          <p><strong className='text-yellow-500'>Member Since:</strong> <span className='text-yellow-600'>{memberSince ? new Date(memberSince).toLocaleDateString() : 'N/A'}</span></p>
         </div>
       </div>
     </div>
