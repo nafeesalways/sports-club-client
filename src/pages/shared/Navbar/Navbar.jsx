@@ -1,4 +1,4 @@
-import React, { use } from "react";
+import React, { use, useEffect, useState } from "react";
 
 import { Link, NavLink } from "react-router";
 import { AuthContext } from "../../../contexts/AuthContext";
@@ -6,6 +6,16 @@ import { toast } from "react-toastify";
 
 const Navbar = () => {
   const { user, logOut } = use(AuthContext);
+   const [theme, setTheme] = useState(
+    localStorage.getItem("theme") === "light" ? "light" : "dark"
+  );
+
+    // Load theme from localStorage on component mount
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    setTheme(savedTheme);
+    document.querySelector("html").setAttribute("data-theme", savedTheme);
+  }, [theme]);
   console.log(user);
   const handleLogOut = () => {
     logOut()
