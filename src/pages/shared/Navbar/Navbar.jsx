@@ -16,7 +16,14 @@ const Navbar = () => {
     setTheme(savedTheme);
     document.querySelector("html").setAttribute("data-theme", savedTheme);
   }, [theme]);
-  console.log(user);
+
+ // Toggle theme function
+  const handleThemeChange = (event) => {
+    const newTheme = event.target.checked ? "dark" : "light";
+    setTheme(newTheme);
+    localStorage.setItem("theme", newTheme);
+  };
+ 
   const handleLogOut = () => {
     logOut()
       .then(() => toast.success("Logged out successfully"))
@@ -92,6 +99,14 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{Links}</ul>
       </div>
       <div className="navbar-end">
+            <input
+          type="checkbox"
+          value="dark"
+          className="lg:toggle lg:theme-controller mr-4 sm:mr-6 hidden"
+          checked={theme === "dark"}
+          onChange={handleThemeChange}
+          aria-label="Toggle dark mode"
+        />
         {user ? (
           <div className="dropdown dropdown-end">
             <div
