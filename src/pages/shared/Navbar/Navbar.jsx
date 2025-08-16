@@ -141,7 +141,7 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-3 shadow bg-base-100 rounded-box w-56"
             >
               <li>
-                <span className="font-semibold text-gray-700 cursor-default">
+                <span className="font-semibold text-yellow-600 cursor-default">
                   {user.displayName || user.email}
                 </span>
               </li>

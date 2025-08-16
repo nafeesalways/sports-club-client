@@ -54,21 +54,21 @@ const CourtBookingModal = ({ court, onClose }) => {
     >
       <div className="flex items-center justify-center min-h-screen">
         <Dialog.Panel className="bg-white p-6 rounded shadow max-w-md w-full">
-          <Dialog.Title className="text-xl font-bold mb-4">
+          <Dialog.Title className="text-xl font-bold mb-4 text-yellow-500">
             Book Court
           </Dialog.Title>
 
           <div className="space-y-2">
             <p>
-              <h2>Name:</h2> <span className="text-yellow-600">{court.name}</span>
+              <h2 className="text-yellow-600">Name:</h2> <span className="text-yellow-700 font-bold">{court.name}</span>
             </p>
 
             <p>
-              <strong>Price per session:</strong> ${court.price}
+              <strong className="text-yellow-600">Price per session:</strong> <span className="text-yellow-600">${court.price}</span>
             </p>
 
             <div>
-              <label>Select Slots:</label>
+              <label className="text-yellow-500">Select Slots:</label>
               <select
                 multiple
                 className="w-full border rounded mt-1"
@@ -81,7 +81,7 @@ const CourtBookingModal = ({ court, onClose }) => {
               >
                 {(Array.isArray(court?.slot) && court.slot.length > 0 ? court.slot : defaultSlots).map(
                   (slot, i) => (
-                    <option key={i} value={slot}>
+                    <option className="text-yellow-600" key={i} value={slot}>
                       {slot}
                     </option>
                   )
@@ -90,16 +90,16 @@ const CourtBookingModal = ({ court, onClose }) => {
             </div>
 
             <div>
-              <label>Date:</label>
+              <label className="text-yellow-600">Date:</label>
               <DatePicker
                 selected={selectedDate}
                 onChange={(date) => setSelectedDate(date)}
-                className="w-full border rounded p-2 mt-1"
+                className="w-full border rounded p-2 mt-1 border-yellow-500 text-yellow-600"
               />
             </div>
 
             <p className="mt-2">
-              <strong>Total Price:</strong> ${totalPrice}
+              <strong className="text-yellow-600">Total Price:</strong> <span className="text-yellow-500">${totalPrice}</span>
             </p>
           </div>
 

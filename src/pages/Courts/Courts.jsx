@@ -10,6 +10,7 @@ import UseAxiosSecure from "../../hook/UseAxiosSecure";
 
 const Courts = () => {
   const [selectedCourt, setSelectedCourt] = useState(null);
+
   const [currentPage, setCurrentPage] = useState(1);
   const [viewMode, setViewMode] = useState("card"); // "card" or "table"
 
@@ -19,24 +20,20 @@ const Courts = () => {
   const axiosSecure = UseAxiosSecure();
   const navigate = useNavigate();
   const { user } = use(AuthContext);
-   const { data: courts = []} = useQuery({
-    queryKey: ["courts",user?.email],
+  const { data: courts = [] } = useQuery({
+    queryKey: ["courts", user?.email],
     queryFn: async () => {
-      console.log('test')
+      console.log("test");
       const res = await axiosSecure.get("/courts");
       return res.data;
     },
   });
-  
-console.log({courts})
+
+  console.log({ courts });
   const handleBookNow = (court) => {
     if (!user) return navigate("/signin");
     setSelectedCourt(court);
   };
-
- 
-
- 
 
   const perPage = viewMode === "card" ? cardsPerPage : rowsPerPage;
   const startIndex = (currentPage - 1) * perPage;
@@ -70,7 +67,9 @@ console.log({courts})
                 alt={court.name}
                 className="w-full h-48 object-cover rounded mb-4"
               />
-              <h3 className="text-xl font-bold text-yellow-600">{court.name}</h3>
+              <h3 className="text-xl font-bold text-yellow-600">
+                {court.name}
+              </h3>
               <p className="text-gray-600">Price per session: ${court.price}</p>
               <p className="text-gray-600 mb-2">
                 Available Slots: {court.slot}
@@ -115,9 +114,11 @@ console.log({courts})
                       className="w-16 h-16 object-cover rounded"
                     />
                   </td>
-                  <td className="py-2 px-4 font-semibold">{court.name}</td>
-                  <td className="py-2 px-4">${court.price}</td>
-                  <td className="py-2 px-4">{court.slot}</td>
+                  <td className="py-2 px-4 font-semibold text-yellow-600">
+                    {court.name}
+                  </td>
+                  <td className="py-2 px-4 text-yellow-600">${court.price}</td>
+                  <td className="py-2 px-4 text-yellow-600">{court.slot}</td>
 
                   <td className="py-2 px-4">
                     <button
