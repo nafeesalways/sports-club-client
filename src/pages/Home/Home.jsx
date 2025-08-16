@@ -7,6 +7,7 @@ import KeyFeatures from './KeyFeatures/KeyFeatures';
 import Reviews from './Reviews/Reviews';
 import Faq from './FAQ/Faq';
 import Newsletter from './NewsLetter/NewsLetter';
+import CustomerSupport from './CustomerSupport/CustomerSupport';
 
 const Home = () => {
     return (
@@ -19,6 +20,7 @@ const Home = () => {
         <Faq></Faq>
         <Newsletter></Newsletter>
         <Reviews></Reviews>
+        <CustomerSupport></CustomerSupport>
         </div>
     );
 };

@@ -81,7 +81,7 @@ const features = [
 
 const KeyFeatures = () => {
   return (
-    <section className="w-full px-6 md:px-16 py-16 bg-white text-gray-800">
+    <section className="w-full px-6 md:px-16 py-16 bg-white text-gray-800 my-10">
       <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-yellow-400">
         Club Management Features
       </h2>
