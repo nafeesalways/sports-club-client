@@ -56,6 +56,18 @@ const Navbar = () => {
       >
         <a>Courts</a>
       </NavLink>
+      <NavLink
+        to="/blogs"
+        className={({ isActive }) =>
+          `block  font-bold mr-4 rounded transition-colors ${
+            isActive
+              ? "border-b-4 font-bold text-lg text-yellow-300"
+              : "font-semibold text-lg"
+          }`
+        }
+      >
+        <a>Blogs</a>
+      </NavLink>
     </>
   );
   return (

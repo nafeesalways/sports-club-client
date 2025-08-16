@@ -31,6 +31,7 @@ import Forbidden from "../pages/Dashboard/Forbidden/Forbidden";
 import ConfirmedBookings from "../pages/Dashboard/ConfirmedBookings/ConfirmedBookings";
 import Payment from "../pages/Dashboard/Payment/Payment";
 import DashboardHome from "../pages/Dashboard/DashboardHome/DashboardHome";
+import Blogs from "../pages/Blogs/Blogs";
 
 export const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ export const router = createBrowserRouter([
         {
           path:'/courts',
           Component:Courts,
+        },
+        {
+          path:'/blogs',
+          Component:Blogs
         },
         {
           path:'/forbidden',

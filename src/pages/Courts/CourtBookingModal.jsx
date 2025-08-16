@@ -60,7 +60,7 @@ const CourtBookingModal = ({ court, onClose }) => {
 
           <div className="space-y-2">
             <p>
-              <strong>Name:</strong> {court.name}
+              <h2>Name:</h2> <span className="text-yellow-600">{court.name}</span>
             </p>
 
             <p>

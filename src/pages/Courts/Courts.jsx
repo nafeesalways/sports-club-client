@@ -70,7 +70,7 @@ console.log({courts})
                 alt={court.name}
                 className="w-full h-48 object-cover rounded mb-4"
               />
-              <h3 className="text-xl font-bold">{court.name}</h3>
+              <h3 className="text-xl font-bold text-yellow-600">{court.name}</h3>
               <p className="text-gray-600">Price per session: ${court.price}</p>
               <p className="text-gray-600 mb-2">
                 Available Slots: {court.slot}
