@@ -5,6 +5,7 @@ import Location from './Location/Location';
 import Promotions from './Promotions/Promotions';
 import KeyFeatures from './KeyFeatures/KeyFeatures';
 import Reviews from './Reviews/Reviews';
+import Faq from './FAQ/Faq';
 
 const Home = () => {
     return (
@@ -14,6 +15,7 @@ const Home = () => {
         <Location></Location>
         <Promotions></Promotions>
         <KeyFeatures></KeyFeatures>
+        <Faq></Faq>
         <Reviews></Reviews>
         </div>
     );
