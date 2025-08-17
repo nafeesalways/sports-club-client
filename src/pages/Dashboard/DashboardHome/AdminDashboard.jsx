@@ -31,7 +31,6 @@ const AdminDashboard= () => {
       return res.data;
     },
   });
-  console.log(statusCounts)
 
   if (isLoading) return <Loader />;
 

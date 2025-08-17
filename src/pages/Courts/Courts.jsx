@@ -29,7 +29,6 @@ const Courts = () => {
     },
   });
 
-  console.log({ courts });
   const handleBookNow = (court) => {
     if (!user) return navigate("/signin");
     setSelectedCourt(court);
@@ -44,6 +43,7 @@ const Courts = () => {
   return (
     <div className="p-6 max-w-6xl mx-auto">
       <div className="flex justify-between items-center mb-6">
+        
         <h2 className="text-3xl font-bold">
           Court Sessions ({viewMode === "card" ? "Card View" : "Table View"})
         </h2>

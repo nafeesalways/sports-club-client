@@ -33,10 +33,10 @@ const ConfirmedBookings = () => {
           <table className="min-w-full border">
             <thead className="bg-gray-100">
               <tr>
-                <th className="p-2 border">Court</th>
-                <th className="p-2 border">Slot</th>
-                <th className="p-2 border">Date</th>
-                <th className="p-2 border">Price</th>
+                <th className="p-2 border text-yellow-600">Court</th>
+                <th className="p-2 border text-yellow-600">Slot</th>
+                <th className="p-2 border text-yellow-600">Date</th>
+                <th className="p-2 border text-yellow-600">Price</th>
               </tr>
             </thead>
             <tbody>
