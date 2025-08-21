@@ -31,7 +31,7 @@ const CustomerSupport = () => {
   return (
     <section
       ref={ref}
-      className="py-16 px-6 sm:px-12 lg:px-24 bg-gradient-to-br from-blue-50 via-white to-blue-100"
+      className="py-16 px-6 sm:px-12 lg:px-24 bg-gradient-to-br from-blue-50 my-10 via-white to-blue-100"
     >
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-4xl font-bold mb-4 text-yellow-600">

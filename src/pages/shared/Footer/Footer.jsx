@@ -3,7 +3,7 @@ import { FaFacebook, FaTwitter, FaYoutube, FaPhoneAlt, FaEnvelope, FaMapMarkerAl
 
 const Footer = () => {
   return (
-    <footer className="bg-yellow-300 text-black px-6 py-10">
+    <footer className="bg-yellow-300 text-black px-6 py-10 my-10">
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {/* Logo and Copyright */}
         <div className="flex flex-col items-start gap-4">
