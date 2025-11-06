@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaQuestionCircle, FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 const faqs = [
   {
@@ -36,30 +37,69 @@ const Faq = () => {
   };
 
   return (
-    <section className="bg-gray-100 py-16 px-4 sm:px-6 lg:px-20">
-      <h2 className="text-4xl font-bold text-center text-yellow-500 mb-10">❓ Frequently Asked Questions</h2>
-      <div className="max-w-4xl mx-auto space-y-4">
-        {faqs.map((faq, index) => (
-          <div
-            key={index}
-            className="bg-white border border-gray-200 rounded-lg p-5 shadow-md transition-all duration-300 ease-in-out"
-          >
-            <button
-              onClick={() => toggleFaq(index)}
-              className="flex justify-between items-center w-full text-left focus:outline-none"
+    <section className="w-full mt-7 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-16 sm:py-20 lg:py-24">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-yellow-400 mb-4 flex items-center justify-center gap-3">
+            <FaQuestionCircle className="text-2xl sm:text-3xl lg:text-4xl" />
+            <span>FAQ</span>
+          </h2>
+          <p className="text-gray-400 text-base sm:text-lg">
+            Find answers to the most commonly asked questions
+          </p>
+        </div>
+
+        {/* FAQ Items */}
+        <div className="space-y-4">
+          {faqs.map((faq, index) => (
+            <div
+              key={index}
+              className={`bg-gradient-to-br from-gray-800 to-black rounded-xl border transition-all duration-300 overflow-hidden ${
+                openIndex === index
+                  ? "border-yellow-400/40 shadow-xl"
+                  : "border-gray-700 hover:border-yellow-400/20"
+              }`}
             >
-              <span className="text-lg font-medium text-gray-800">{faq.question}</span>
-              <span className="text-2xl text-yellow-500">
-                {openIndex === index ? "-" : "+"}
-              </span>
-            </button>
-            {openIndex === index && (
-              <div className="mt-3 text-gray-600 transition duration-300 ease-in-out">
-                {faq.answer}
+              <button
+                onClick={() => toggleFaq(index)}
+                className="flex justify-between items-center w-full text-left p-5 sm:p-6 focus:outline-none group"
+              >
+                <span className="text-base sm:text-lg font-semibold text-white pr-4 group-hover:text-yellow-400 transition-colors">
+                  {faq.question}
+                </span>
+                <div className={`flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-300 ${
+                  openIndex === index 
+                    ? "bg-yellow-400/20 text-yellow-400" 
+                    : "bg-gray-700 text-gray-400 group-hover:bg-yellow-400/10 group-hover:text-yellow-400"
+                }`}>
+                  {openIndex === index ? (
+                    <FaChevronUp className="w-4 h-4" />
+                  ) : (
+                    <FaChevronDown className="w-4 h-4" />
+                  )}
+                </div>
+              </button>
+              
+              {/* Answer */}
+              <div
+                className={`transition-all duration-300 ease-in-out overflow-hidden ${
+                  openIndex === index ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                }`}
+              >
+                <div className="px-5 sm:px-6 pb-5 sm:pb-6 pt-2">
+                  <div className="border-t border-gray-700 pt-4">
+                    <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  </div>
+                </div>
               </div>
-            )}
-          </div>
-        ))}
+            </div>
+          ))}
+        </div>
+
+   
       </div>
     </section>
   );
