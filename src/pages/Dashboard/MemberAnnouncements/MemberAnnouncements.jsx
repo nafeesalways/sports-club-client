@@ -1,10 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
-
-
-
 import Loader from '../../../Loader/Loader';
 import useAxiosSecure from '../../../hook/UseAxiosSecure';
-
+import { FaBullhorn, FaCalendarAlt, FaInfoCircle } from 'react-icons/fa';
+import { MdAnnouncement } from 'react-icons/md';
 
 const MemberAnnouncements = () => {
   const axiosSecure = useAxiosSecure();
@@ -17,27 +15,112 @@ const MemberAnnouncements = () => {
     }
   });
 
-  if (isLoading) return <Loader />;
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 flex items-center justify-center">
+        <Loader />
+      </div>
+    );
+  }
 
   return (
-    <div className="p-6">
-      <h2 className="text-2xl font-bold mb-4">📢 Club Announcements</h2>
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 p-4 sm:p-6 lg:p-8">
+      <div className="max-w-5xl mx-auto">
+        {/* Header */}
+        <div className="mb-8">
+          <h1 className="text-3xl sm:text-4xl font-black text-yellow-400 mb-2 flex items-center gap-3">
+            <FaBullhorn className="text-2xl sm:text-3xl" />
+            Club Announcements
+          </h1>
+          <p className="text-gray-400 text-sm sm:text-base">
+            Stay updated with the latest news and updates from the club
+          </p>
+        </div>
 
-      {announcements.length === 0 ? (
-        <p>No announcements available.</p>
-      ) : (
-        <ul className="space-y-4">
-          {announcements.map((a) => (
-            <li key={a._id} className="bg-white p-4 rounded shadow border">
-              <h3 className="text-xl font-semibold text-yellow-700">{a.title}</h3>
-              <p className="text-gray-700 mt-2">{a.message}</p>
-              <p className="text-sm text-gray-500 mt-1">
-                Posted on: {new Date(a.date).toLocaleDateString()}
+        {announcements.length === 0 ? (
+          <div className="bg-gradient-to-br from-gray-800 to-black rounded-2xl shadow-2xl border border-yellow-400/20 p-12 text-center">
+            <div className="max-w-md mx-auto">
+              <div className="w-24 h-24 mx-auto mb-6 bg-yellow-400/10 rounded-full flex items-center justify-center">
+                <MdAnnouncement className="w-12 h-12 text-yellow-400" />
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-2">No Announcements</h3>
+              <p className="text-gray-400">
+                There are no announcements at the moment. Check back later for updates!
               </p>
-            </li>
-          ))}
-        </ul>
-      )}
+            </div>
+          </div>
+        ) : (
+          <div className="space-y-4 sm:space-y-6">
+            {announcements.map((a, index) => (
+              <div
+                key={a._id}
+                className="bg-gradient-to-br from-gray-800 to-black rounded-xl sm:rounded-2xl shadow-xl border border-yellow-400/20 overflow-hidden hover:border-yellow-400/40 transition-all duration-300 group"
+              >
+                {/* Announcement Header */}
+                <div className="bg-gradient-to-r from-yellow-400/10 to-yellow-400/5 px-4 sm:px-6 py-3 sm:py-4 border-b border-yellow-400/20">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                    <div className="flex items-center gap-3 flex-1 min-w-0">
+                      <div className="p-2 bg-yellow-400/20 rounded-lg flex-shrink-0">
+                        <FaBullhorn className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400" />
+                      </div>
+                      <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-yellow-400 transition-colors truncate">
+                        {a.title}
+                      </h3>
+                    </div>
+                    <div className="flex items-center gap-2 text-xs text-gray-400 ml-11 sm:ml-0">
+                      <FaCalendarAlt className="w-3 h-3 flex-shrink-0" />
+                      <span className="whitespace-nowrap">
+                        {new Date(a.date).toLocaleDateString('en-US', {
+                          year: 'numeric',
+                          month: 'short',
+                          day: 'numeric'
+                        })}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Announcement Body */}
+                <div className="p-4 sm:p-6">
+                  <div className="flex items-start gap-3">
+                    <div className="p-2 bg-blue-500/10 rounded-lg flex-shrink-0 mt-1">
+                      <FaInfoCircle className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-gray-300 text-sm sm:text-base leading-relaxed whitespace-pre-wrap break-words">
+                        {a.message}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Optional: Show announcement number */}
+                  <div className="mt-4 pt-4 border-t border-gray-700/50">
+                    <p className="text-xs text-gray-500">
+                      Announcement #{announcements.length - index}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* Info Box */}
+        {announcements.length > 0 && (
+          <div className="mt-8 bg-blue-500/10 border border-blue-500/30 rounded-xl p-4 sm:p-6">
+            <div className="flex items-start gap-3">
+              <FaInfoCircle className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
+              <div>
+                <p className="text-blue-400 font-semibold mb-1 text-sm sm:text-base">Important Notice</p>
+                <p className="text-gray-400 text-xs sm:text-sm">
+                  Make sure to check announcements regularly for important updates about court schedules, 
+                  maintenance, special events, and club policies.
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
